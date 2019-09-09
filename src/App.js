@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import './style.css'
 
+import Home from './views/index'
+import Error404 from './views/404'
+import Boilerplate from './components/boilerplate'
+import FrontEnd from './views/front-end'
+import BackEnd from './views/back-end' 
+import Contact from './views/contact'
+import Blog from './views/blog'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Boilerplate/> 
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/front-end" component={FrontEnd}/>
+          <Route path="/back-end" component={BackEnd}/>
+          <Route path="/contact" component={Contact}/>
+          <Route path="/blog" component={Blog}/>
+          <Route path="/error-404" component={Error404}/>
+          <Redirect to="/error-404"/>
+        </Switch>
+    </Router>
   );
 }
 
