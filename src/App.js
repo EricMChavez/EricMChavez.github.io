@@ -12,7 +12,7 @@ import Blog from './views/blog'
 function App() {
   return (
     <Router>
-      <Boilerplate/> 
+      <Boilerplate> 
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/front-end" component={FrontEnd}/>
@@ -22,6 +22,7 @@ function App() {
           <Route path="/error-404" component={Error404}/>
           <Redirect to="/error-404"/>
         </Switch>
+      </Boilerplate>
     </Router>
   );
 }
