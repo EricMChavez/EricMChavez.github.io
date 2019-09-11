@@ -6,7 +6,7 @@ body{
     display: grid;
     grid-template-columns: 100px auto;
     grid-template-rows: 100px auto 100px;
-    grid-template-areas: "nav ." "nav main" "footer footer";
+    grid-template-areas: "nav main" "nav main" "footer footer";
 }
 ::-webkit-scrollbar { width: 0 !important }
 
@@ -14,7 +14,6 @@ main{
     min-height: 100vh;
     grid-area: main;
     place-self: center;
-    margin: 0 5vw 100px;
 }
 a {
     color: inherit;
