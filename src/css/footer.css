@@ -3,7 +3,8 @@ footer{
     width: 100%;
     height: 200px;
     background-color: #222222;
+    background-image: url('./../assets/Large-Triangles.svg');
+    background-size: 33%;
     display: flex;
     justify-content: center
-
 }

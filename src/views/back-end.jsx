@@ -2,9 +2,9 @@ import React from 'react'
 
 const Back = () => {
         return (
-            <main>
+            <div id='main'>
             <h1>Back-End</h1>
-            </main>
+            </div>
         )
     
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 const Front = () => {
         return (
-            <main>
+            <div>
             <h1>Front-End</h1>
-            </main>
+            </div>
         )
     
 }

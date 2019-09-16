@@ -18,8 +18,8 @@ const SideDrawer = (props) => {
                     <NavLink exact to="/contact" className="menuItem" activeClassName="selected" onClick={props.close}>
                         CONACT
                     </NavLink>
-                    <NavLink exact to="/blog" className="menuItem" activeClassName="selected" onClick={props.close}>
-                        BLOG
+                    <NavLink exact to="/articles" className="menuItem" activeClassName="selected" onClick={props.close}>
+                        ARTICLES
                     </NavLink>
             </div>
         );
