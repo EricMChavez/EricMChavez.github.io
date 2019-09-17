@@ -9,6 +9,7 @@ const Boilerplate = (props) => {
                 <div className="bg"></div>
                 <div className="bg bg2"></div>
                 <div className="bg bg3"></div>
+                
                 {props.children}
                 <Footer/>
             </React.Fragment>

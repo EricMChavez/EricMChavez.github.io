@@ -8,9 +8,8 @@ body{
     grid-template-rows: 100px auto 100px;
     grid-template-areas: "nav main" "nav main" "footer footer";
 }
-::-webkit-scrollbar { width: 0 !important }
 
-main{
+#main{
     min-height: 100vh;
     grid-area: main;
     place-self: center;
@@ -31,7 +30,7 @@ a {
 }
 .bg {
     animation:slide 50s ease-in-out infinite alternate;
-    background-image: linear-gradient(-45deg, #404040 50%, #dddddd 50%);
+    background-image: linear-gradient(-45deg, #404040 50%, #dddddd 50%) ;
     bottom:0;
     top:0;
     left:-50%;
@@ -52,7 +51,7 @@ a {
     transform:translateX(15%)
 
 }
-@keyframes slide {
+/* @keyframes slide {
     0% {
         transform:translateX(-15%);
     }
@@ -64,4 +63,4 @@ a {
     #root{
         grid-template-areas: ". ." "main main" "footer footer";
     }
-}
+} */

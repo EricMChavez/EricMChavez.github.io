@@ -2,7 +2,7 @@ import React from 'react'
 import './../css/home.css'
 const Home = () => {
         return (
-            <main>
+            <div id='main'>
                 <div id="greeting">
                     <div id="title">
                         <h1>Eric Chavez</h1>
@@ -16,7 +16,7 @@ const Home = () => {
                     <div className="card"></div>
                     <div className="card"></div>
                 </div>
-            </main>
+            </div>
         )
     
 }

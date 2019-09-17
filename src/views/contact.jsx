@@ -1,9 +1,9 @@
 import React from 'react'
 const Contact = () => {
         return (
-            <main>
+            <div id='main'>
             <h1>Contact</h1>
-            </main>
+            </div>
         )
     
 }

@@ -5,24 +5,23 @@ import SideDrawer from './side-drawer'
 
 class Navbar extends Component {
     state = {
-        drawerOpen: false,
-        selected:  window.location.href.split('/')[3]
+        isDrawerOpen: false,
     }
-    openDrawer = () => {
+    toggleDrawer = () => {
         this.setState((prevState) => {
-            return {drawerOpen: !prevState.drawerOpen}
+            return {isDrawerOpen: !prevState.isDrawerOpen}
         })
     }
     closeDrawer = () => {
-            this.setState({drawerOpen: false})
+            this.setState({isDrawerOpen: false})
     }
     render() { 
-    const { drawerOpen } = this.state
+    const { isDrawerOpen } = this.state
         return ( 
             <React.Fragment>
-                <SideDrawer close={this.closeDrawer} open={drawerOpen}/>
-                <svg fill="white" onClick={this.openDrawer} id='menuBtn' width="100" viewBox="0 0 600 600">
-                    <g className={drawerOpen ? 'menuBtn negative' : 'menuBtn'}>
+                <SideDrawer close={this.closeDrawer} open={isDrawerOpen}/>
+                <svg fill="white" onClick={this.toggleDrawer} id='menuBtn' width="100" viewBox="0 0 600 600">
+                    <g className={isDrawerOpen ? 'menuBtn negative' : 'menuBtn'}>
                         <polygon points="150,112 425,112 425,187 225,187"/>
                         <polygon points="150,262 425,262 425,337 225,337 225,412 425,412 500,487 150,487"/>
                     </g>
@@ -35,17 +34,17 @@ class Navbar extends Component {
                             <polygon points="150,262 425,262 425,337 225,337 225,412 425,412 500,487 150,487"/>
                         </svg>
                     </NavLink>
-                    <NavLink exact to="/front-end" className="navItem" activeClassName="selected">
+                    <NavLink exact to="/skills" className="navItem" activeClassName="selected">
                             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M5 8h14V5H5v3zm9 11v-9H5v9h9zm2 0h3v-9h-3v9zM4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/>
                             </svg>
-                            <div>FRONT-END</div>
+                            <div>SKILLS</div>
                     </NavLink>
-                    <NavLink exact to="/back-end" className="navItem" activeClassName="selected">
+                    <NavLink exact to="/personal" className="navItem" activeClassName="selected">
                             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h16V5H4zm8 10h6v2h-6v-2zm-3.333-3L5.838 9.172l1.415-1.415L11.495 12l-4.242 4.243-1.415-1.415L8.667 12z"/>
                             </svg>
-                            <div>BACK-END</div>
+                            <div>PERSONAL</div>
                     </NavLink>
                     <NavLink exact to="/contact" className="navItem" activeClassName="selected">
                             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -53,11 +52,11 @@ class Navbar extends Component {
                             </svg>
                             <div>CONACT</div>
                     </NavLink>
-                    <NavLink exact to="/blog" className="navItem" activeClassName="selected">
+                    <NavLink exact to="/articles" className="navItem" activeClassName="selected">
                             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M5 19h1.414l9.314-9.314-1.414-1.414L5 17.586V19zm16 2H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L9.243 19H21v2zM15.728 6.858l1.414 1.414 1.414-1.414-1.414-1.414-1.414 1.414z"/>
                             </svg>
-                            <div>BLOG</div>
+                            <div>ARTICLES</div>
                     </NavLink>
                 </div>
             </React.Fragment>
