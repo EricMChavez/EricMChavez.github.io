@@ -12,21 +12,16 @@ body{
 #main{
     min-height: 100vh;
     grid-area: main;
-    place-self: center;
+    display: flex;
+    justify-content: center
 }
 a {
     color: inherit;
     text-decoration: inherit;
 }
 .card {
-    min-height: 100%;
     background-color: #222222;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .4), 15px 15px 40px rgba(0, 0, 0, 0.3);
-}
-#cards .card{
-    width: 100%;
-    max-width: 300px;
-    min-height: 400px;
 }
 .bg {
     animation:slide 50s ease-in-out infinite alternate;
@@ -42,11 +37,11 @@ a {
 }
 .bg2 {
     animation-direction:alternate-reverse;
-    animation-duration:44s;
+    animation-duration:64s;
     transform:translateX(-15%)
 }
 .bg3 {
-    animation-duration:59s;
+    animation-duration:79s;
     animation-delay: -20s;
     transform:translateX(15%)
 
