@@ -1,29 +1,18 @@
 import React from 'react'
 import './../css/home.css'
-import posed from 'react-pose';
-const Container = posed.ul({
-    open: {
-        staggerChildren: 50
-    }
-});
-
-const Card = posed.li({
-    open: { x: 0, opacity: 1 },
-    closed: { x: -100, opacity: 0 }
-});
 const Home = () => {
         return (
             <div id='main'>
                 <div id="greeting">
-                    <Card id="title">
+                    <div id="title">
                         <h1>Eric Chavez</h1>
                         <h2>Full-Stack Developer</h2>
-                    </Card>
-                    <Card className="card" id="face"></Card>
-                    <Card className="card" id="stats"></Card>
+                    </div>
+                    <div className="card" id="face"></div>
+                    <div className="card" id="stats"></div>
                 </div>
                 <div id="badges">
-                    <Card className="badge">
+                    <div className="badge">
                         <div className="badgeIcon card">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g>
@@ -33,8 +22,8 @@ const Home = () => {
                             </svg> 
                         </div>
                         <div className="badgeTitle">INTUITIVE</div>
-                    </Card> 
-                    <Card className="badge">
+                    </div> 
+                    <div className="badge">
                         <div className="badgeIcon card">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g>
@@ -44,8 +33,8 @@ const Home = () => {
                             </svg>
                         </div>
                         <div className="badgeTitle">OPTIMISED</div>
-                    </Card> 
-                    <Card className="badge">
+                    </div> 
+                    <div className="badge">
                         <div className="badgeIcon card">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g>
@@ -55,8 +44,8 @@ const Home = () => {
                             </svg>
                         </div>
                         <div className="badgeTitle">ELEGANT</div>
-                    </Card>  
-                    <Card className="badge">
+                    </div>  
+                    <div className="badge">
                         <div className="badgeIcon card">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g>
@@ -66,7 +55,7 @@ const Home = () => {
                             </svg>
                         </div>
                         <div className="badgeTitle">DELIGHTFUL</div>
-                    </Card>    
+                    </div>    
                 </div>
             </div>
         )
