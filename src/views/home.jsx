@@ -4,26 +4,41 @@ import './../css/home.css'
 import Header from './../components/header'
 import Footer from './../components/footer'
 class Home extends Component {
-    state = {  }
+    state = { 
+        atTop: true
+    }
+    handleScroll = (e) => {
+        console.dir(e)
+        if(e.pageY === 0){
+            this.setState({atTop:true})
+        }else{
+            this.setState({atTop:false})
+        }
+
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
     render() { 
+        const { atTop } = this.state
         return ( 
             <React.Fragment>
-            <Header/>
-            <div id="landing">
-                <div id="title">
-                    <h1>Eric Chavez</h1>
-                    <div id="line"></div>
-                    <h2>Full-Stack Developer</h2>
-                    <div id="cta">MESSAGE ME</div>
-                </div>
+            <Header atTop={atTop}/>
+            <div className="full" id="landing">
                 <div id="blueBlock"></div>
                 <div id="face"></div>
-                <div id="devices"></div>
+                <div id="title">
+                    <h1>Eric Chavez</h1>
+                    <div className="underLine"></div>
+                    <h2>Full-Stack Developer</h2>
+                    <div className="btn cta">Download Resume</div>
+                </div>
+                <div id="illustration"></div>
             </div>
-            <div className="grey"></div>
-            <div className="white"></div>
-            <div className="grey"></div>
-            <div className="white"></div>
+            <div className="grey full"></div>
+            <div className="white full"></div>
+            <div className="grey full"></div>
+            <div className="white full"></div>
             <Footer/>
             </React.Fragment>
         );
