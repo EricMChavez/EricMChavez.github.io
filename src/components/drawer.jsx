@@ -17,8 +17,8 @@ const Drawer = (props) => {
                         <polygon points="150,262 425,262 425,337 225,337 225,412 425,412 500,487 150,487"/>
                     </g>
                     <g className={props.isDrawerOpen ? "drawer" : "drawer open"}>
-                        <polygon points="175,112 500,487 400,487 175,212"/>
-                        <polygon points="450,112 125,487 225,487 450,212"/> 
+                        <polygon points="250,112 500,487 425,487 175,112"/>
+                        <polygon points="425,112 150,487 225,487 500,112"/> 
                     </g>
                 </svg>  
             </div>

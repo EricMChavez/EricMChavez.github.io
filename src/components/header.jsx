@@ -7,11 +7,11 @@ const Header = (props) => {
                 <a href="#landing" id="logo"></a>
                 <a href="#tech" className="navlink">TECH</a>
                 <div className="slash">/</div>
-                <div className="navlink">REVIEWS</div>
+                <a href="#reviews" className="navlink">REVIEWS</a>
                 <div className="slash">/</div>
-                <div className="navlink">ABOUT ME</div>
+                <a href="#about" className="navlink">ABOUT ME</a>
                 <div className="slash">/</div>
-                <div className="navlink">ARTICLES</div>
+                <a href="articles" className="navlink">ARTICLES</a>
             </div>
         </div>
         )

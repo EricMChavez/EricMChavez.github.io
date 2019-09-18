@@ -29,8 +29,8 @@
 }
 #title{
     position: absolute;
+    margin: 15px 5vw;
     top: 240px;
-    margin: 15px 5vw
 }
 h1{
     font-size: 30px;
@@ -56,23 +56,28 @@ h2{
     }
     #title{
         position: absolute;
-        top: 600px;
+        bottom: calc(50% - 400px);
         left: calc(50vw - 127px);
+        top: auto;
         margin: 0
     }
     #blueBlock{
         position: absolute;
-        top: -550px;
+        top: -600px;
         right: calc(50vw - 560px);
     }
     #face{
         position: absolute;
-        top: 100px;
+        top: 50px;
         right: calc(50vw - 160px)
+    }
+    #landing{
+        min-height: 750px;
     }
 }
 @media (min-width: 1600px){
     #title{
-        margin: 15px
+        margin: 15px;
+        top: 240px;
     }
 }
