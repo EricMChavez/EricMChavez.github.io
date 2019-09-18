@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './../css/style.css'
 import './../css/home.css'
 import Header from './../components/header'
+import Footer from './../components/footer'
 class Home extends Component {
     state = {  }
     render() { 
@@ -21,6 +22,9 @@ class Home extends Component {
             </div>
             <div className="grey"></div>
             <div className="white"></div>
+            <div className="grey"></div>
+            <div className="white"></div>
+            <Footer/>
             </React.Fragment>
         );
     }
