@@ -3,40 +3,38 @@ import './../css/style.css'
 import './../css/home.css'
 import Header from './../components/header'
 import Footer from './../components/footer'
+import Landing from './../components/landing'
+import Values from './../components/values'
+import Drawer from './../components/drawer'
 class Home extends Component {
     state = { 
-        atTop: true
+        atTop: true,
+        isDrawerOpen: false
     }
     handleScroll = (e) => {
-        console.dir(e)
         if(e.pageY === 0){
             this.setState({atTop:true})
         }else{
             this.setState({atTop:false})
         }
-
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
+    toggleDrawer = () => {
+        this.setState(prevState => ({
+            isDrawerOpen: !prevState.isDrawerOpen
+        }))
+    }
     render() { 
-        const { atTop } = this.state
+        const { atTop, isDrawerOpen } = this.state
         return ( 
             <React.Fragment>
+            <Drawer isDrawerOpen={isDrawerOpen} handleToggleDrawer={this.toggleDrawer}/>
             <Header atTop={atTop}/>
-            <div className="full" id="landing">
-                <div id="blueBlock"></div>
-                <div id="face"></div>
-                <div id="title">
-                    <h1>Eric Chavez</h1>
-                    <div className="underLine"></div>
-                    <h2>Full-Stack Developer</h2>
-                    <div className="btn cta">Download Resume</div>
-                </div>
-                <div id="illustration"></div>
-            </div>
-            <div className="grey full"></div>
-            <div className="white full"></div>
+            <Landing/>
+            <div className="grey full"><Values/></div>
+            <div className="white full"><div id="tech"/></div>
             <div className="grey full"></div>
             <div className="white full"></div>
             <Footer/>

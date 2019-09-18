@@ -1,0 +1,36 @@
+@media(min-width: 800px){
+    #drawerBtn,
+    #drawer{
+        display: none
+    }
+}
+#drawerBtn{
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    z-index: 99;
+    
+}
+#drawer{
+    background-color: white;
+    position: absolute;
+    left: -80vw;
+    height: 100vh;
+    width: 80vw;
+    transition-duration: 300ms;
+    z-index: 90;
+}
+#drawer.open{
+    transform: translateX(80vw)
+}
+.drawer{
+    transition-duration: 200ms;
+    transition-property: opacity;
+}
+.drawer.open{
+    opacity: 0;
+}
+.drawer.closed{
+    opacity: 0;
+}
+

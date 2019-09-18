@@ -1,69 +1,3 @@
-#landing{
-    position: relative;
-    min-height: 850px;
-    max-height: 1000px;
-    height: 100vh;
-    overflow: hidden;
-}
-#blueBlock{
-    position: absolute;
-    right: -200px;
-    top: -450px;
-    height: 500px;
-    width: 960px;
-    background-image: linear-gradient(60deg, #3672D6, rgba(45,31,195,.15)90%);
-    border-radius: 8px;
-    transform: rotate(-45deg);
-    transform-origin: center right;
-    z-index: -1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3), 15px 15px 15px rgba(0, 0, 0, .1)
-}
-#face{
-    position: absolute;
-    right: 200px;
-    top: 200px;
-    height: 320px;
-    width: 320px;
-    background-image: url('./../assets/face.jpg');
-    background-size: cover;
-    border: white solid 5px;
-}
-#title{
-    position: absolute;
-    top: 240px;
-    margin: 15px
-}
-h1{
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 7px;
-}
-h2{
-    letter-spacing: 4px;
-}
-.underLine{
-    height: 1px;
-    margin: 15px 0;
-    background-image: linear-gradient(to right,#3672D6,#2D1FC3, transparent)
-}
-#illustration{
-    position: absolute;
-    bottom: -20px;
-    left: calc(33% - 150px);
-    height: 300px;
-    width: 300px;
-    background-image: url('./../assets/responsive.svg');
-    background-size: contain;
-    background-repeat: no-repeat
-}
-.grey{
-    border-bottom:solid #666666 1px;
-    height: 400px;
-    background-color: #DDDDDD
-}
-.white{
-    height: 600px;
-}
 .btn{
     margin: 50px 0;
     padding: 20px;
@@ -72,8 +6,6 @@ h2{
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-
-    box-shadow: -5px 5px 5px rgba(0, 0, 0, .3), -15px 15px 15px rgba(0, 0, 0, .1);
 
     border-radius: 10px;
     background-image: linear-gradient(45deg, #f83600 ,#fe8c00);

@@ -1,14 +1,13 @@
+body{
+    scroll-behavior: smooth;
+}
 #root{
     font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
     display: grid;
     grid-template-columns: 
         [viewport-start] minmax(0, auto)
         [container-start] minmax(0, 1400px) [container-end]
         minmax(0, auto) [viewport-end];
-}
-.contained {
-    grid-column: container;
 }
 .full { 
     grid-column: viewport;
@@ -18,7 +17,27 @@
 .full * {
     grid-column: container;
 }
+.shadow-left{
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, .3), -15px 15px 15px rgba(0, 0, 0, .1);
+}
+.shadow-right{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3), 15px 15px 15px rgba(0, 0, 0, .1);
+}
+.underLine{
+    height: 1px;
+    margin: 15px 0;
+    background-image: linear-gradient(to right,#3672D6,#2D1FC3, transparent)
+}
 a {
     color: inherit;
     text-decoration: none; 
+}
+/* dev */
+.grey{
+    border-bottom:solid #666666 1px;
+    height: 400px;
+    background-color: #DDDDDD
+}
+.white{
+    height: 600px;
 }

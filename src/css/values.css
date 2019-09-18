@@ -1,0 +1,8 @@
+#values{
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+.value{
+    background-color: #eeeeee
+}
