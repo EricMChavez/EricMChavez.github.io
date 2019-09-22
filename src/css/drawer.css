@@ -9,11 +9,11 @@
     height: 70px;
     width: 70px;
     z-index: 99;
-    
+    background-color: white
 }
 #drawer{
     background-color: white;
-    position: absolute;
+    position: fixed;
     left: -80vw;
     height: 100vh;
     width: 80vw;

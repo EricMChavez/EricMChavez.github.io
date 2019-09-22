@@ -1,7 +1,13 @@
 #footer{
+    position: relative;
     height: 300px;
     background-color: #222222;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    color: white
+}
+#footerLogo{
+    position: absolute;
+    top: 50px
 }

@@ -1,8 +1,89 @@
 #values{
+    position: relative;
     display: flex;
     justify-content: space-around;
-    align-items: center
+    flex-wrap: wrap;
+    align-items: center;
+    height: 450px;
+    background-image: linear-gradient(to right,transparent, #f3f3f3, transparent)
+}
+#valuesTitle{
+    position: absolute;
+    top: 125px;
+    font-size: 25px;
+    text-align: center;
+}
+#valuesTitle br{
+    display: none
 }
 .value{
-    background-color: #eeeeee
+    position: relative;
+    bottom: -175px;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 175px;
+    color: white;
+    margin:15px;
+    border: solid 2px #bbbbbb;
+    background-color: white;
+}
+#intuitive .valueIcon{
+    background-image: url('./../assets/bulb.svg');
+}
+#creative .valueIcon{
+    background-image: url('./../assets/rocket.svg');
+}
+#detail .valueIcon{
+    background-image: url('./../assets/magnifying.svg');
+}
+.valueIcon{
+    margin-bottom: 60px;
+    height: 100px;
+    width: 100px
+}
+#intuitive.value{
+    background-image: linear-gradient(45deg, #3672D6 20%, rgba(45,31,195,.45));
+
+}
+#creative.value{
+    background-image: linear-gradient(-45deg,#3672D6 20%, rgba(45,31,195,.45));
+}
+#detail.value{
+    background-image: linear-gradient(0deg, #3672D6 20%, rgba(45,31,195,.45));
+
+}
+@media(max-width: 1000px){
+    #values{
+        justify-content: center;
+    }
+    #valuesTitle br{
+        display: block
+    }
+    #valuesTitle{
+        top:23px
+    }
+    .value{
+        flex-direction: row;
+        width: 80vw;
+        max-width: 500px;
+        height: 120px;
+        bottom: -90px;
+        justify-content: space-around;
+        align-items: center;
+    background-image: linear-gradient(0deg, #3672D6, rgba(45,31,195,.45)) !important;
+
+    }
+    .valueIcon{
+        margin-bottom:0;
+        width: 70px;
+        height: 70px;
+    }
+    .valueTitle{
+        font-size: 23px;
+    }
 }

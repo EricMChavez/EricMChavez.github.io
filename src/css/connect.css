@@ -1,0 +1,75 @@
+#connect{
+    position: fixed;
+    right: 100px;
+    bottom: 0px;
+    width: 150px;
+    height: 50px;
+    transition-property: letter-spacing, bottom, height, width;
+    transition-duration: 400ms;
+}
+#connect::after{
+    content: '';
+    z-index: -1;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-image: linear-gradient(45deg, #f83600 ,#fe8c00);
+    background-size: 200% 100%;
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    transition-property: background-position-x;
+    transition-duration: 400ms;
+}
+#connect:hover::after{
+    background-position-x: right;
+}
+#connect.button:hover{
+    letter-spacing: 2px;
+}
+#connect.hidden{
+    bottom: -60px;
+}
+#connect.open::after{
+    transition-property: none;
+    background-position-x: left
+}
+#connect.open{
+    height: 400px;
+    width: 400px;
+}
+
+#connectBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#connectForm{
+    color: white;
+    position: absolute;
+    top: 5px;bottom: 0;left: 5px;right: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    opacity: 0;
+    transition: 800ms;
+    background-color: #222222
+}
+#connectForm.open {
+    opacity: 1;
+}
+#closeBtn{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 30px;
+    border: red 1px solid
+}

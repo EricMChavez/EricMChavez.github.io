@@ -1,21 +1,38 @@
 #landing{
     position: relative;
-    min-height: 850px;
+    min-height: 750px;
     max-height: 1000px;
     height: 100vh;
     overflow: hidden;
 }
-#blueBlock{
-    position: absolute;
-    right: -200px;
-    top: -450px;
+.blueBlock{
     height: 500px;
     width: 960px;
     background-image: linear-gradient(60deg, #3672D6, rgba(45,31,195,.15)90%);
     border-radius: 8px;
+    z-index: -1;
+}
+#block1{
+    position: absolute;
+    right: -200px;
+    top: -450px;
     transform: rotate(-45deg);
     transform-origin: center right;
-    z-index: -1;
+   
+}
+#block2{
+    position: absolute;
+    left: -200px;
+    bottom: 100px;
+    transform: rotate(135deg);
+    transform-origin: center left;
+}
+#block3{
+    position: absolute;
+    right: -1400px;
+    bottom: 30px;
+    transform: rotate(45deg);
+    transform-origin: center left;
 }
 #face{
     position: absolute;
@@ -43,9 +60,9 @@ h2{
 #illustration{
     position: absolute;
     bottom: -20px;
-    left: calc(33% - 150px);
-    height: 300px;
-    width: 300px;
+    left: calc(33% - 125px);
+    height: 35%;
+    width: 35%;
     background-image: url('./../assets/responsive.svg');
     background-size: contain;
     background-repeat: no-repeat
@@ -56,12 +73,12 @@ h2{
     }
     #title{
         position: absolute;
-        bottom: calc(50% - 400px);
+        bottom: calc(50% - 360px);
         left: calc(50vw - 127px);
         top: auto;
         margin: 0
     }
-    #blueBlock{
+    #block1{
         position: absolute;
         top: -600px;
         right: calc(50vw - 560px);
