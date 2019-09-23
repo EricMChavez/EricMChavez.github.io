@@ -12,14 +12,13 @@ import Reviews from './../components/reviews'
 import Tech from './../components/tech'
 import About from './../components/about'
 import Connect from '../components/connect'
-
 class Home extends Component {
     state = { 
         atTop: true,
         isDrawerOpen: false
     }
-    handleScroll = (e) => {
-        if(e.pageY === 0 || e.path[1].scrollY === 0){
+    handleScroll = () => {
+        if(window.pageYOffset === 0){
             this.setState({atTop:true})
         }else{
             this.setState({atTop:false})
@@ -40,10 +39,11 @@ class Home extends Component {
             <Drawer isDrawerOpen={isDrawerOpen} handleToggleDrawer={this.toggleDrawer}/>
             <Header atTop={atTop}/>
             <Landing/>
-            <div className="grey full"><Values/></div>
-            <div className="white full"><div id="tech"/><Tech/></div>
-            <div className="grey full"><div id="reviews"/><Reviews/></div>
-            <div className="white full"><div id="about"/><About/></div>
+            <div className="hr full"/>
+            <div className="full"><Values/></div>
+            <div className="full"><Reviews/></div>
+            <div className="full"><Tech/></div>
+            <div className="white full"><About/></div>
             <Footer/>
             <Connect atTop={atTop}/>
             </React.Fragment>

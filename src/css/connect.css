@@ -56,7 +56,9 @@
     border-top-right-radius: 8px;
     opacity: 0;
     transition: 800ms;
-    background-color: #222222
+    background-color: #222222;
+    display: grid;
+    
 }
 #connectForm.open {
     opacity: 1;

@@ -45,13 +45,6 @@
 .navlink:hover{
     letter-spacing: 4px;
 }
-#tech,
-#reviews,
-#about,
-#articles{
-    position: relative;
-    top: -70px;
-}
 @media(max-width: 1000px){
     #header{
         display: none

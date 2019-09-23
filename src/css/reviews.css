@@ -1,0 +1,147 @@
+#reviews{
+    position: relative;
+    height: 350px;
+    width: 800px;
+    border: solid 1px #dddddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .8);
+    display: grid;
+    grid: 70px auto / 1fr;
+    grid-template-areas: 'header''body';
+}
+.stripe{
+    position: absolute;
+    grid-column: viewport;
+    height: 200px;
+    width: 100vw;
+    background-image: linear-gradient(to right,rgba(45,31,195,.15), #3672D6 30% 70%, rgba(45,31,195,.15));
+    z-index: -1;
+    transform: skew(-11deg) rotate(-11deg);
+
+}
+#reviewsHeader{
+    grid-area: header;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dots{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel__dot{
+    border-radius: 40px;
+    height: 15px;
+    margin: 1px
+}
+.carousel__dot:disabled{
+    background-color: #dddddd
+}
+.reviewsBtn{
+    display: inline-block;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    position: relative;
+    color: #f83600;
+    font-size: inherit;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(45deg, #f83600 ,#fe8c00);
+    cursor: pointer;
+}
+.reviewsBtn::after{
+    position: absolute;
+    content: '';
+    height: 1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(45deg, #f83600 ,#fe8c00);
+}
+#reviewsHeader *{
+    margin: 15px;
+}
+.carousel{
+    place-self: center;
+}
+.slider{
+    grid-area: body;
+    height: 280px;
+    width: 800px;
+    position: relative;
+}
+.slide{
+    height: 100%;
+    width: 100%
+}
+.carousel__slide-focus-ring{
+    display: none
+}
+.slideBtn{
+    position: absolute;
+    top:115px;
+    z-index: 8;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-image: url('../assets/play-line.svg');
+    background-size: contain
+}
+.slideBtn:focus{
+    outline: none;
+}
+.backBtn{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    left: -25px;
+
+}
+.nextBtn{
+    position: absolute;
+    right: -25px;
+}
+.review{
+    margin: 25px 50px;
+    display: grid;
+    height: calc(100% - 50px);
+    grid-template-rows: 75px 20px auto;
+    grid-template-columns: 1fr 2fr ;
+    grid-template-areas: 'reviewPic reviewWords' 'reviewTitle reviewWords' 'reviewTitle reviewWords';
+    grid-gap: 15px
+}
+.reviewWords{
+    grid-area: reviewWords;
+    place-self: center;
+    padding: 10px;
+    border-left: solid #222 1px;
+}
+.reviewPic{
+    border-radius: 50px;
+    grid-area: reviewPic;
+    height: 75px;
+    width: 75px;
+    background-size: cover;
+}
+.reviewTitle{
+    grid-area: reviewTitle;
+    font-size: 14px
+}
+.reviewName{
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 600
+}
+.trinity{
+    background-image: url('../assets/trinity-seimer.jpeg');    
+}

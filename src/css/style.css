@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 #root{
     font-family: 'Montserrat', sans-serif;
@@ -31,14 +32,51 @@ html{
     margin: 15px 0;
     background-image: linear-gradient(to right,#3672D6,#2D1FC3, transparent)
 }
+.hr{
+    height: 1px;
+    background-image: linear-gradient(to right,transparent,#2D1FC3,#3672D6,#2D1FC3, transparent)
+}
 a {
     color: inherit;
     text-decoration: none; 
 }
-/* dev */
-.grey{
-    background-color: #E5E5E5
+button.launch {
+    background-color: #F9A300;
+    border: none;
+    height: 40px;
+    padding: 5px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-right: 10px;
 }
-.white{
-    height: 600px;
+button{
+    border: solid 1px #ddd
+}
+button.launch:hover {
+    cursor: pointer;
+    background-color: #FABD44;
+}
+
+button.change {
+    background-color: #F88F00;
+    border: none;
+    height: 40px;
+    padding: 5px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+button.change:hover {
+    cursor: pointer;
+    background-color: #F89900;
+}
+
+button:active {
+    outline: none;
+    border: none;
 }

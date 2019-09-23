@@ -1,15 +1,14 @@
 #values{
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 450px;
-    background-image: linear-gradient(to right,transparent, #f3f3f3, transparent)
+    height: 650px;
 }
 #valuesTitle{
     position: absolute;
-    top: 125px;
+    top: 80px;
     font-size: 25px;
     text-align: center;
 }
@@ -18,7 +17,6 @@
 }
 .value{
     position: relative;
-    bottom: -175px;
     text-align: center;
     font-size: 25px;
     display: flex;
@@ -28,7 +26,7 @@
     height: 250px;
     width: 175px;
     color: white;
-    margin:15px;
+    margin:15px 75px;
     border: solid 2px #bbbbbb;
     background-color: white;
 }
@@ -59,13 +57,14 @@
 }
 @media(max-width: 1000px){
     #values{
-        justify-content: center;
+        align-content: flex-start;
     }
     #valuesTitle br{
         display: block
     }
     #valuesTitle{
-        top:23px
+        top:23px;
+
     }
     .value{
         flex-direction: row;
@@ -75,7 +74,7 @@
         bottom: -90px;
         justify-content: space-around;
         align-items: center;
-    background-image: linear-gradient(0deg, #3672D6, rgba(45,31,195,.45)) !important;
+        background-image: linear-gradient(0deg, #3672D6, rgba(45,31,195,.45)) !important;
 
     }
     .valueIcon{
