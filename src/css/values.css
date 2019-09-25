@@ -42,7 +42,9 @@
 .valueIcon{
     margin-bottom: 60px;
     height: 100px;
-    width: 100px
+    width: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #intuitive.value{
     background-image: linear-gradient(45deg, #3672D6 20%, rgba(45,31,195,.45));

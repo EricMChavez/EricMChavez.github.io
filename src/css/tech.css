@@ -1,3 +1,90 @@
 #tech{
-    height: 300px;
+    position: relative;
+    height: 500px;
+    margin-top: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+}
+#techTitle{
+    font-weight: 600;
+    font-size: 25px;
+    position: absolute;
+    top: -100px;
+    margin: 20px;
+}
+.techLogo{
+    height: 100px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    font-size: 18px;
+
+    margin-bottom: 80px;
+
+}
+#reactLogo{
+    background-image: url('../assets/react-logo.svg')
+}
+#reactLogo::after{
+    content: 'React.js';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
+}
+#nodeLogo{
+    background-image: url('../assets/node-logo.svg')
+}
+#nodeLogo::after{
+    content: 'Node.js';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
+}
+#JavascriptLogo{
+    background-image: url('../assets/javascript-logo.svg')
+}
+#JavascriptLogo::after{
+    content: 'Javascript';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
+}
+#mongoLogo{
+    background-image: url('../assets/mongo-logo.svg')
+}
+#mongoLogo::after{
+    content: 'Mongo DB';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
+}
+#gitLogo{
+    background-image: url('../assets/git-logo.svg')
+}
+#gitLogo::after{
+    content: 'Git';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
+}
+#lambdaLogo{
+    background-image: url('../assets/lambda-logo.svg')
+}
+#lambdaLogo::after{
+    content: 'AWS Lambda';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -30px;
+    
 }

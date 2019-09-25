@@ -78,3 +78,14 @@
     margin: 10px;
     cursor: pointer;
 }
+@media(max-width: 1000px){
+    #reviewForm{
+        grid-template-rows: 40px 40px auto 40px;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-areas: 'fullname fullname' 'jobtitle jobtitle''recommendation recommendation' 'linkedin submit';
+    }
+    #reviewForm{
+        padding: 5px;
+        font-size: 12px;
+    }
+}

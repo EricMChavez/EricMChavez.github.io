@@ -4,7 +4,21 @@ import ReviewForm from './reviewForm'
 import "pure-react-carousel/dist/react-carousel.es.css";
 import './../css/reviews.css'
 class Reviews extends Component{
-    
+    state = {
+        mobile: false
+    }
+    componentDidMount() {
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+    }
+    resize() {
+        if(window.innerWidth <= 1000){
+            this.setState({mobile: true});
+        }else{
+            this.setState({mobile: false});
+
+        } 
+    }
     setFocus = () => {
         setTimeout(() => {
             document.getElementById("fullNameField").focus()
@@ -13,12 +27,13 @@ class Reviews extends Component{
         
     }
     render(){
+        const { mobile } = this.state
     return(
         <React.Fragment>
         <div className="stripe" id="reviewsStripe"/>
         <CarouselProvider
-        naturalSlideWidth={800}
-        naturalSlideHeight={280}
+        naturalSlideWidth={mobile ? (300) :(800)}
+        naturalSlideHeight={mobile ? (580) :(260)}
         totalSlides={2}
         dragEnabled={false}
         >

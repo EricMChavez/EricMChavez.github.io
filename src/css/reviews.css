@@ -145,3 +145,26 @@
 .trinity{
     background-image: url('../assets/trinity-seimer.jpeg');    
 }
+@media(max-width: 1000px){
+    #reviews{
+        height: 650px;
+        width: 300px;;
+    }
+    .slider{
+        height: 580px;
+        width: 300px;
+    }
+    #reviewsHeader{
+        font-size: 12px;
+    }
+    .review{
+        grid-template-rows: 65px 15px auto;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-areas: 'reviewPic reviewPic' 'reviewTitle reviewTitle' 'reviewWords reviewWords';
+        grid-gap: 15px
+    }
+    .slideBtn{
+        top:215px;
+
+    }
+}
