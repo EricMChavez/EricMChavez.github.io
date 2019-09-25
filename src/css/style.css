@@ -27,6 +27,10 @@ html{
 .shadow-right{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, .3), 15px 15px 15px rgba(0, 0, 0, .1);
 }
+.shadow-up{
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, .3), 15px -15px 15px rgba(0, 0, 0, .1);
+
+}
 .underLine{
     height: 1px;
     margin: 15px 0;

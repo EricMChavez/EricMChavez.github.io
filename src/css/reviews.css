@@ -145,6 +145,9 @@
 .trinity{
     background-image: url('../assets/trinity-seimer.jpeg');    
 }
+.james{
+    background-image: url('../assets/james.jpeg')
+}
 @media(max-width: 1000px){
     #reviews{
         height: 650px;

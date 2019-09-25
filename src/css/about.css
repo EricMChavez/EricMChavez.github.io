@@ -34,12 +34,12 @@ transform: rotate(135deg)
     padding-right: 30px;
     font-size: 18px;
     letter-spacing: 1px;
-    line-height: 1.2;
+    line-height: 1.4;
     background-color: rgba(255,255,255,.5)
 }
 @media(max-width: 1000px){
     #about{
-        height: calc(1300px - 50vw);
+        height: calc(1300px - 40vw);
         overflow: hidden;
     }
     #aboutBody{
@@ -47,6 +47,8 @@ transform: rotate(135deg)
         left: 0;
         transform: translateY(0%);
         padding: 10px 50px 10px 50px;
+        
+
     }
     #me{
         bottom: 100px;
@@ -62,6 +64,7 @@ transform: rotate(135deg)
 }
 @media(max-width: 490px){
     #aboutBody{
+        line-height: 1;
         font-size: 16px;
     }
 }

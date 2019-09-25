@@ -1,0 +1,124 @@
+#greyScreen{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    z-index: 9990;
+}
+.greyClosed{
+    display: none
+}
+#connectForm{
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 600px;
+    width: 800px;
+    background-color: #f5f5f5;
+    z-index: 9999;
+    border-radius: 8px;
+    padding: 15px;
+    display: grid;
+    grid-gap: 15px;
+    grid: 100px 50px 50px auto 50px 100px / 1fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "name ."
+    "email ."
+    "message message"
+    ". submit"
+    "social social"
+}
+.formClosed{
+    display: none !important
+}
+#closeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+#messageTitle{
+    place-self: center center;
+    grid-area: title;
+    font-weight: 600;
+    font-size: 30px;
+}
+#social{
+    grid-area: social;
+    border-top: #ccc solid 1px;
+    margin: 15px 12% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#connectForm button{
+    grid-area: submit;
+    font-size: 16px;
+    width: 50%;
+    border-radius: 8px;
+    place-self: stretch end;
+    border: none;
+    color: white;
+    background-image: linear-gradient(45deg, #f83600 ,#fe8c00);
+    cursor: pointer;
+}
+#messageBody{
+    grid-area: message;
+    font-size: 16px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    resize: none;
+    border: #222 solid 2px;
+    border-radius: 8px;
+}
+#messageEmail{
+    grid-area: email;
+    border: solid 1px #222;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+}
+#messageName{
+    grid-area: name;
+    border: solid 1px #222;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+}
+#connectForm input{
+    width: 140%;
+    padding: 10px;
+    font-size: 16px;
+    border:none;
+    align-items: center;
+}
+#connectForm label{
+    width: 60%;
+    background-color: rgb(45,31,195);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#facebookIcon{
+    background-image: url('../assets/facebook-icon.svg');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    margin: 30px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+#instagramIcon{
+    background-image: url('../assets/instagram-icon.svg');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+
+}

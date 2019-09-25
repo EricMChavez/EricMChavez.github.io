@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import '../css/reviewForm.css'
 
-const url = "https://goofy-hugle-884571.netlify.com/.netlify/functions/reviews"
+const url = "https://goofy-hugle-884571.netlify.com/.netlify/functions/reviews";
+
+const axiosConfig = {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    }
+};
 
 class ReviewForm extends Component {
     constructor(props) {
@@ -19,33 +27,35 @@ class ReviewForm extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
     handleSubmit(e) {
-        const { fullname, title, body } = this.state
+        const { fullname, jobTitle, reviewBody } = this.state
         e.preventDefault();
-        
-        axios.post(url, {name: fullname, jobTitle:title, reviewBody:body})
-        .then(res => {console.log(res)})
-        .catch(err => {console.log(err)})
 
-        this.setState({fullname: '', jobTitle: '',recommendation: ''})
+        const data = JSON.stringify({name: fullname, jobTitle:jobTitle, reviewBody:reviewBody});
+
+        axios.post(url, data, axiosConfig)
+        .then(res => {console.dir(res)})
+        .catch(err => {console.dir(err)})
+
+        this.setState({fullname: '', jobTitle: '',reviewBody: ''})
         document.getElementById("reviewForm").reset()
     }
     render() { 
-        const { fullname, title, body } = this.state
+        const { fullname, jobTitle, reviewBody } = this.state
         return ( 
             <form  onSubmit={this.handleSubmit} id="reviewForm">
                 <div id="fullName">
-                    <label for="fullname">Full Name</label>
+                    <label htmlFor="fullname">Full Name</label>
                     <input value={fullname} onChange={this.handleChange} placeholder="Required" name="fullname" id="fullNameField" type="text"></input>
                 </div>
                 <div id="jobTitle">
-                    <label for="jobTitle">Job Title</label>
-                    <input value={title} onChange={this.handleChange} name="jobTitle"  type="text"/>
+                    <label htmlFor="jobTitle">Job Title</label>
+                    <input value={jobTitle} onChange={this.handleChange} name="jobTitle"  type="text"/>
                 </div>
                 <div id="recommendation">
-                    <textarea value={body} placeholder="Say Something Nice" onChange={this.handleChange} name="reviewBody" type="text"/>
+                    <textarea value={reviewBody} placeholder="Say Something Nice" onChange={this.handleChange} name="reviewBody" type="text"/>
                 </div>
                 <div id="linkedIn"><p>...or consider recommending me on</p><a href="https://www.linkedin.com/in/eric-chavez-253b0895"><div id="linkedInIcon"></div></a></div>
-                <button type="submit">Send</button>
+                <button type="submit">SEND</button>
             </form>
         );
     }

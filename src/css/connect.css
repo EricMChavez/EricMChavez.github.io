@@ -24,32 +24,9 @@
 #connectBtn.hidden{
     bottom: -60px;
 }
-#greyScreen{
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0,0,0,.7);
-    position: fixed;
-    z-index: 9990;
-}
-.greyClosed{
-    display: none
-}
-#connectForm{
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    height: 600px;
-    width: 800px;
-    background-color: white;
-    z-index: 9999;
-    border-radius: 8px
-}
-.formClosed{
-    display: none;
-}
-#closeBtn{
-    position: absolute;
-    top: 0;
-    right: 0;
+@media(max-width: 1000px){
+    #connectBtn{
+        display: none
+    }   
+
 }

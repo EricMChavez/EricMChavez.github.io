@@ -1,7 +1,6 @@
 #tech{
     position: relative;
-    height: 500px;
-    margin-top: 250px;
+    margin: 250px 0;
     padding-top: 100px;
     display: flex;
     justify-content: space-around;
@@ -92,7 +91,6 @@
 @media(max-width: 1000px){
     #tech{
         height: calc(700px - 30vw);
-        margin-top: 100px;
+        margin: 250px 0 0 0;
     }
-    
 }

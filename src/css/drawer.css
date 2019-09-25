@@ -19,6 +19,9 @@
     width: 80vw;
     transition-duration: 300ms;
     z-index: 90;
+    padding-top:100px;
+    display: grid;
+    grid: repeat(4, 70px) auto / 1fr
 }
 #drawer.open{
     transform: translateX(80vw)
@@ -32,5 +35,12 @@
 }
 .drawer.closed{
     opacity: 0;
+}
+.drawerlink{
+    place-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #ddd solid 1px; 
 }
 

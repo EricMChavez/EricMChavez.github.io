@@ -23,7 +23,10 @@ const Drawer = (props) => {
                 </svg>  
             </div>
             <div id="drawer" className={props.isDrawerOpen ? 'open' : 'closed'}>
-
+                <a onClick={props.handleToggleDrawer} href="#landing" className="drawerlink">HOME</a>
+                <a onClick={props.handleToggleDrawer} href="#reviewsAnchor" className="drawerlink">RECOMMENDATIONS</a>
+                <a onClick={props.handleToggleDrawer} href="#techAnchor" className="drawerlink">TECH</a>
+                <a onClick={props.handleToggleDrawer} href="#aboutAnchor" className="drawerlink">ABOUT ME</a>
             </div>
         </React.Fragment>
     )
