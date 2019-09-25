@@ -1,7 +1,8 @@
 #tech{
     position: relative;
     height: 500px;
-    margin-top: 300px;
+    margin-top: 250px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -13,7 +14,7 @@
     font-weight: 600;
     font-size: 25px;
     position: absolute;
-    top: -100px;
+    top: 0px;
     margin: 20px;
 }
 .techLogo{
@@ -86,5 +87,12 @@
     position: absolute;
     left: 0; right: 0;
     bottom: -30px;
+    
+}
+@media(max-width: 1000px){
+    #tech{
+        height: calc(700px - 30vw);
+        margin-top: 100px;
+    }
     
 }

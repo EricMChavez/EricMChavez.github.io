@@ -1,13 +1,14 @@
 #footer{
     position: relative;
-    height: 300px;
+    height: 400px;
     background-color: #222222;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     color: white
 }
-#footerLogo{
-    position: absolute;
-    top: 50px
+#flaticon{
+    margin-top: 100px;
+    font-size: 12px;
 }

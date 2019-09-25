@@ -30,6 +30,7 @@ class Reviews extends Component{
         const { mobile } = this.state
     return(
         <React.Fragment>
+        <div id="reviewsAnchor" />
         <div className="stripe" id="reviewsStripe"/>
         <CarouselProvider
         naturalSlideWidth={mobile ? (300) :(800)}

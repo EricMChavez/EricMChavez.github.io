@@ -50,3 +50,8 @@
         display: none
     }
 }
+#aboutAnchor,
+#reviewsAnchor{
+    position: relative;
+    top: -100px;
+}

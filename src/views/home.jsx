@@ -43,7 +43,7 @@ class Home extends Component {
             <div className="full"><Values/></div>
             <div className="full"><Reviews/></div>
             <div className="full"><Tech/></div>
-            <div className="white full"><About/></div>
+            <div className="full"><About/></div>
             <Footer/>
             <Connect atTop={atTop}/>
             </React.Fragment>

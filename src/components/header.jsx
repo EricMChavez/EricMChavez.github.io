@@ -5,13 +5,11 @@ const Header = (props) => {
         <div className={props.atTop ? "full" : "full header"} id="header">
             <div id="nav">
                 <a href="#landing" id="logo"></a>
-                <a href="#tech" className="navlink">TECH</a>
+                <a href="#reviewsAnchor" className="navlink">RECOMMENDATIONS</a>
                 <div className="slash">/</div>
-                <a href="#reviews" className="navlink">REVIEWS</a>
+                <a href="#techAnchor" className="navlink">TECH</a>
                 <div className="slash">/</div>
-                <a href="#about" className="navlink">ABOUT ME</a>
-                <div className="slash">/</div>
-                <a href="articles" className="navlink">ARTICLES</a>
+                <a href="#aboutAnchor" className="navlink">ABOUT ME</a>
             </div>
         </div>
         )
