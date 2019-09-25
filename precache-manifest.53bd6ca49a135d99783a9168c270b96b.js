@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b75f19e21a730237f3611b44a8f08c52",
+    "revision": "a30e7281d163d864edd243d55986305a",
     "url": "/index.html"
   },
   {
-    "revision": "48b0a39726f11a9263f7",
+    "revision": "f5398626f5b6ab036a0f",
     "url": "/static/css/2.1fd2b905.chunk.css"
   },
   {
-    "revision": "28d8d9e909f65b50303e",
-    "url": "/static/css/main.05b596f3.chunk.css"
+    "revision": "4330215b4ce3c38a4e0e",
+    "url": "/static/css/main.1badd397.chunk.css"
   },
   {
-    "revision": "48b0a39726f11a9263f7",
-    "url": "/static/js/2.8476c534.chunk.js"
+    "revision": "f5398626f5b6ab036a0f",
+    "url": "/static/js/2.61abf0a5.chunk.js"
   },
   {
-    "revision": "28d8d9e909f65b50303e",
-    "url": "/static/js/main.e4f9b94f.chunk.js"
+    "revision": "4330215b4ce3c38a4e0e",
+    "url": "/static/js/main.61a3f6db.chunk.js"
   },
   {
     "revision": "a4d0e6d11719682b8aac",
@@ -32,8 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/face.1c893052.jpg"
   },
   {
+    "revision": "dc71821fb60d5caf45f1a84c23cfef46",
+    "url": "/static/media/facebook-icon.dc71821f.svg"
+  },
+  {
     "revision": "1190a19ce3cc940741a60137a1e074cb",
     "url": "/static/media/git-logo.1190a19c.svg"
+  },
+  {
+    "revision": "e710a0001b1632c6675cb47fa53bb7b9",
+    "url": "/static/media/instagram-icon.e710a000.svg"
+  },
+  {
+    "revision": "1b4ab17b4109a0303cdcf34627e720a7",
+    "url": "/static/media/james.1b4ab17b.jpeg"
   },
   {
     "revision": "87711407412494d529d45ee76167583c",
@@ -44,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/lambda-logo.ed1dbb7b.svg"
   },
   {
-    "revision": "d1fe87ce690c978f2439f743be2b2aa1",
-    "url": "/static/media/linkedin-box-fill.d1fe87ce.svg"
+    "revision": "dbbf1bee6ca697f46633585a7b104fb7",
+    "url": "/static/media/linkedin-icon.dbbf1bee.svg"
   },
   {
     "revision": "3867bbad5dd35ed10dec709c739e18d3",
