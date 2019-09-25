@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import '../css/reviewForm.css'
+
+const url = "https://goofy-hugle-884571.netlify.com/.netlify/functions/reviews"
 
 class ReviewForm extends Component {
     constructor(props) {
@@ -7,7 +10,7 @@ class ReviewForm extends Component {
         this.state = {
             fullname: '',
             jobTitle: '',
-            recommendation: '',
+            reviewBody: '',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +19,13 @@ class ReviewForm extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
     handleSubmit(e) {
+        const { fullname, title, body } = this.state
         e.preventDefault();
+        
+        axios.post(url, {name: fullname, jobTitle:title, reviewBody:body})
+        .then(res => {console.log(res)})
+        .catch(err => {console.log(err)})
+
         this.setState({fullname: '', jobTitle: '',recommendation: ''})
         document.getElementById("reviewForm").reset()
     }
@@ -33,7 +42,7 @@ class ReviewForm extends Component {
                     <input value={title} onChange={this.handleChange} name="jobTitle"  type="text"/>
                 </div>
                 <div id="recommendation">
-                    <textarea value={body} placeholder="Say Something Nice" onChange={this.handleChange} name="recommendation" type="text"/>
+                    <textarea value={body} placeholder="Say Something Nice" onChange={this.handleChange} name="reviewBody" type="text"/>
                 </div>
                 <div id="linkedIn"><p>...or consider recommending me on</p><a href="https://www.linkedin.com/in/eric-chavez-253b0895"><div id="linkedInIcon"></div></a></div>
                 <button type="submit">Send</button>
