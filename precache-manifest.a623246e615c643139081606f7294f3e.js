@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19ab76687263eebb80b894c7b2e194a5",
+    "revision": "fa7a1128410821c1aae1f8830498fe81",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.1fd2b905.chunk.css"
   },
   {
-    "revision": "2efefcca082c649a5b4c",
-    "url": "/static/css/main.483ecef4.chunk.css"
+    "revision": "2c5509091d349b8a0d5a",
+    "url": "/static/css/main.861037ba.chunk.css"
   },
   {
     "revision": "d41aba83d8964b5bf815",
     "url": "/static/js/2.34f3c919.chunk.js"
   },
   {
-    "revision": "2efefcca082c649a5b4c",
-    "url": "/static/js/main.cb543840.chunk.js"
+    "revision": "2c5509091d349b8a0d5a",
+    "url": "/static/js/main.e1e74d4a.chunk.js"
   },
   {
     "revision": "a4d0e6d11719682b8aac",
@@ -32,6 +32,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/face.1c893052.jpg"
   },
   {
+    "revision": "1190a19ce3cc940741a60137a1e074cb",
+    "url": "/static/media/git-logo.1190a19c.svg"
+  },
+  {
+    "revision": "87711407412494d529d45ee76167583c",
+    "url": "/static/media/javascript-logo.87711407.svg"
+  },
+  {
+    "revision": "ed1dbb7bdb7c3e3e2d390250da190150",
+    "url": "/static/media/lambda-logo.ed1dbb7b.svg"
+  },
+  {
     "revision": "d1fe87ce690c978f2439f743be2b2aa1",
     "url": "/static/media/linkedin-box-fill.d1fe87ce.svg"
   },
@@ -44,8 +56,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/magnifying.774d97dc.svg"
   },
   {
+    "revision": "9ad24c6f98530ca1def535ca7a63b960",
+    "url": "/static/media/me.9ad24c6f.jpeg"
+  },
+  {
+    "revision": "2985235df31b8742d893d5b7e80145c5",
+    "url": "/static/media/mongo-logo.2985235d.svg"
+  },
+  {
+    "revision": "94cafb0d1b4a2875215db17964f0938a",
+    "url": "/static/media/node-logo.94cafb0d.svg"
+  },
+  {
     "revision": "ee7d6c96c8d430612a16e90e1c99ab20",
     "url": "/static/media/play-line.ee7d6c96.svg"
+  },
+  {
+    "revision": "ee61ca49ec2188e4ac026017e8b315b7",
+    "url": "/static/media/react-logo.ee61ca49.svg"
   },
   {
     "revision": "7db3dd066aee69773cc3be1f2e29caf4",
