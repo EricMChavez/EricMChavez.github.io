@@ -148,6 +148,9 @@
 .james{
     background-image: url('../assets/james.jpeg')
 }
+.andy{
+    background-image: url('../assets/andy.jpeg')
+}
 @media(max-width: 1000px){
     #reviews{
         height: 650px;
