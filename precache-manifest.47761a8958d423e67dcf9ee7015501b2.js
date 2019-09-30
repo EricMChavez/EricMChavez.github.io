@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2a9be88c455b4fd0968bb59a13f48d8",
+    "revision": "63935b01e21b16d828a9622495af917a",
     "url": "/index.html"
   },
   {
-    "revision": "f5398626f5b6ab036a0f",
+    "revision": "65817ef4d128b1e2ce6b",
     "url": "/static/css/2.1fd2b905.chunk.css"
   },
   {
-    "revision": "687e0139f5a57b003f15",
-    "url": "/static/css/main.1badd397.chunk.css"
+    "revision": "d4eeebdbed082ca19cb9",
+    "url": "/static/css/main.771d0a22.chunk.css"
   },
   {
-    "revision": "f5398626f5b6ab036a0f",
-    "url": "/static/js/2.61abf0a5.chunk.js"
+    "revision": "65817ef4d128b1e2ce6b",
+    "url": "/static/js/2.514d9402.chunk.js"
   },
   {
-    "revision": "687e0139f5a57b003f15",
-    "url": "/static/js/main.2760a85b.chunk.js"
+    "revision": "d4eeebdbed082ca19cb9",
+    "url": "/static/js/main.f858e6c8.chunk.js"
   },
   {
     "revision": "a4d0e6d11719682b8aac",
     "url": "/static/js/runtime~main.c0e1757a.js"
+  },
+  {
+    "revision": "1b6a835cb1637ec9f105d8ce563fd533",
+    "url": "/static/media/andy.1b6a835c.jpeg"
   },
   {
     "revision": "37681ee69505be435c68c523bee220c8",
@@ -56,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/lambda-logo.ed1dbb7b.svg"
   },
   {
-    "revision": "dbbf1bee6ca697f46633585a7b104fb7",
-    "url": "/static/media/linkedin-icon.dbbf1bee.svg"
+    "revision": "4b475fb3f54b3e35daa04295ec48df4c",
+    "url": "/static/media/linkedin.4b475fb3.svg"
   },
   {
     "revision": "3867bbad5dd35ed10dec709c739e18d3",
