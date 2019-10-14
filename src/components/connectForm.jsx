@@ -33,6 +33,7 @@ class ConnectForm extends Component {
         this.setState({name: '', email: '',messageBody: ''})
         document.getElementById("messageForm").reset();
         this.props.toggleConnect()
+        alert('Thank You! I will respond as soon as possible')
     }
     componentDidMount(){
         document.getElementById("nameField").focus()
@@ -58,9 +59,9 @@ class ConnectForm extends Component {
                 <button type="submit">SEND</button>
             
             <div id="social">
-                <a href="https://www.linkedin.com/in/eric-chavez-253b0895"><div className="shadow" id="linkedInIcon"></div></a>
-                <a href="https://www.facebook.com/eric.chavez.3154"><div className="shadow" id="facebookIcon"></div></a>
-                <a href="https://www.instagram.com/eric_m_chavez/"><div className="shadow" id="instagramIcon"></div></a>
+                <a rel="noopener noreferrer" target='_blank' href="https://www.linkedin.com/in/eric-chavez-253b0895"><div className="shadow" id="linkedInIcon"></div></a>
+                <a rel="noopener noreferrer" target='_blank' href="https://www.facebook.com/eric.chavez.3154"><div className="shadow" id="facebookIcon"></div></a>
+                <a rel="noopener noreferrer" target='_blank' href="https://www.instagram.com/eric_m_chavez/"><div className="shadow" id="instagramIcon"></div></a>
             </div>
             </div>
             </form>

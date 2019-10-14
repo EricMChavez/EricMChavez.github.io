@@ -73,6 +73,7 @@
     resize: none;
     border: #222 solid 2px;
     border-radius: 8px;
+    padding: 10px;
 }
 #messageEmail{
     grid-area: email;
