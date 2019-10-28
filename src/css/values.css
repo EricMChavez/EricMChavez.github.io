@@ -60,6 +60,7 @@
 @media(max-width: 1000px){
     #values{
         align-content: flex-start;
+        
     }
     #valuesTitle br{
         display: block
@@ -69,6 +70,7 @@
 
     }
     .value{
+        box-shadow: none;
         flex-direction: row;
         width: 80vw;
         max-width: 500px;
