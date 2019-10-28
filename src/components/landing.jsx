@@ -12,7 +12,7 @@ const Landing = () => {
                 <h1>Eric Chavez</h1>
                 <div className="underLine"/>
                 <h2>Full-Stack Developer</h2>
-                <a rel="noopener noreferrer" target='_blank' href="https://pdfhost.io/v/JEENM3V26_Eric_Chavez.pdf" >
+                <a rel="noopener noreferrer" target='_blank' href="https://emchavez.s3.us-east-2.amazonaws.com/EricChavezResume.pdf" >
                     <div className="btn cta shadow-left">View Resumé</div>
                 </a>
             </div>
