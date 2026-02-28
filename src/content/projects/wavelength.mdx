@@ -1,0 +1,60 @@
+# WaveLength
+
+A puzzle game built on a custom TypeScript game engine where players wire together processing nodes to transform waveforms into target outputs.
+
+<div className="flex flex-wrap gap-2 my-4">
+  <Badge>TypeScript</Badge>
+  <Badge>Canvas API</Badge>
+  <Badge>Custom Game Engine</Badge>
+  <Badge>Claude Code</Badge>
+</div>
+
+<div className="flex gap-4 my-4">
+  [View Live](https://ericmchavez.github.io/WaveLength) · [GitHub](https://github.com/EricMChavez/WaveLength)
+</div>
+
+---
+
+## Play It
+
+<ProjectEmbed
+  src="https://ericmchavez.github.io/WaveLength"
+  title="WaveLength - Waveform Puzzle Game"
+/>
+
+---
+
+## Overview
+
+WaveLength is inspired by signal chains found in Digital Audio Workstations (DAWs). Players connect processing nodes on a visual gameboard to manipulate waveform signals, transforming inputs into target outputs to solve each puzzle.
+
+The game bridges my audio engineering background with software development — the same concepts I used to arrange and process audio tracks became the foundation for the game's mechanics.
+
+Built entirely from scratch in 11 days, February 9–20, 2026.
+
+---
+
+## Technical Highlights
+
+- **Custom Game Engine** — Purpose-built TypeScript engine handling rendering, input, state management, and the game loop
+- **Waveform Graphing** — Real-time rendering and visualization of audio waveforms using the Canvas API
+- **Signal Processing System** — Transformation nodes that manipulate waveform data through mathematical operations
+- **Node-Based Editor** — Visual gameboard where players connect processing nodes to build signal chains
+- **Custom Chip System** — Players can abstract their node logic chains into reusable chips, with recursive calling support
+- **Animation System** — Consistent move and zoom animations that visually communicate abstraction depth when entering or exiting custom chips
+
+---
+
+## AI-Assisted Development
+
+WaveLength was built entirely using Claude Code as an AI development partner. The approach focused on effective context management — breaking down large problems and providing the AI agent with the right context at the right time.
+
+The key insight from this project: AI-generated code quality is a developer problem, not an AI problem. With careful context management, clear specifications, and deliberate architecture decisions, AI-assisted development can produce creative, stable, and unique software quickly.
+
+The result is 6 working puzzles demonstrating all core systems — a technical demo that functions as a proof of concept for a full game with narrative progression and graduated difficulty.
+
+---
+
+## Impact
+
+The LinkedIn showcase post gained **178 likes** and **29 comments**, sparking discussion around context management as an emerging critical skill in AI-assisted development. Community suggestions included adding MIDI support and export functionality.

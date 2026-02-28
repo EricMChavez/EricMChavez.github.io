@@ -1,0 +1,64 @@
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import type { Project } from "@/data/types";
+import { cn } from "@/lib/utils";
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
+  return (
+    <Card
+      className={cn(
+        project.featured && "border-accent/20",
+        project.comingSoon && "opacity-70"
+      )}
+    >
+      <div className="flex flex-col gap-4">
+        {project.featured && (
+          <span className="text-xs font-medium tracking-wide text-accent uppercase">
+            Featured Project
+          </span>
+        )}
+        <h3 className="text-xl font-semibold text-text-primary">
+          {project.name}
+        </h3>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <Badge key={tech}>{tech}</Badge>
+          ))}
+        </div>
+        {!project.comingSoon && (
+          <div className="flex flex-wrap gap-3 pt-2">
+            {project.url && (
+              <Button
+                variant="primary"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="h-4 w-4" />
+                View Live
+              </Button>
+            )}
+            <Button variant="secondary" href={`/projects/${project.slug}`}>
+              Case Study
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
+        {project.comingSoon && (
+          <p className="pt-2 text-sm font-medium text-text-secondary">
+            Coming Soon
+          </p>
+        )}
+      </div>
+    </Card>
+  );
+}
