@@ -2,7 +2,7 @@
 
 ## Project
 
-Personal portfolio site for Eric Chavez. Next.js 15 (App Router), TypeScript strict, Tailwind CSS, Framer Motion.
+Personal portfolio site for Eric Chavez. Next.js 16 (App Router), TypeScript strict, Tailwind CSS, Framer Motion.
 
 ## Commands
 
@@ -10,6 +10,8 @@ Personal portfolio site for Eric Chavez. Next.js 15 (App Router), TypeScript str
 - `pnpm build` — production build (static export)
 - `pnpm lint` — ESLint
 - `pnpm type-check` — TypeScript compiler check (no emit)
+
+Deployed to GitHub Pages (https://ericmchavez.github.io) by `.github/workflows/deploy.yml` on every push to `main`. The repo is `EricMChavez/EricMChavez.github.io`; WaveLength lives separately at `/WaveLength`.
 
 ## Architecture
 
