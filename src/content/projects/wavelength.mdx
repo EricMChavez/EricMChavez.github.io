@@ -1,11 +1,14 @@
 # WaveLength
 
-A puzzle game built on a custom TypeScript game engine where players wire together processing nodes to transform waveforms into target outputs.
+A browser puzzle game about signal processing, running on a Canvas 2D engine I wrote from scratch in TypeScript.
 
 <div className="flex flex-wrap gap-2 my-4">
   <Badge>TypeScript</Badge>
   <Badge>Canvas API</Badge>
-  <Badge>Custom Game Engine</Badge>
+  <Badge>React</Badge>
+  <Badge>Zustand</Badge>
+  <Badge>Vite</Badge>
+  <Badge>Vitest</Badge>
   <Badge>Claude Code</Badge>
 </div>
 
@@ -26,32 +29,32 @@ A puzzle game built on a custom TypeScript game engine where players wire togeth
 
 ## Overview
 
-WaveLength is inspired by signal chains found in Digital Audio Workstations (DAWs). Players connect processing nodes on a visual gameboard to manipulate waveform signals, transforming inputs into target outputs to solve each puzzle.
+Each puzzle gives you three input waveforms and three target outputs. You place chips (Add, Divide, Negate, Amp, Offset, Memory and more) and wire them together until every output matches its target. Solve a puzzle and it becomes a chip you can use in later puzzles, so chips can contain chips, all the way down.
 
-The game bridges my audio engineering background with software development — the same concepts I used to arrange and process audio tracks became the foundation for the game's mechanics.
+The idea comes from signal chains in digital audio workstations. The concepts I used to route and process audio tracks became the game's core mechanic.
 
-Built entirely from scratch in 11 days, February 9–20, 2026.
+WaveLength shipped in February 2026 as a public beta with six puzzles, a tutorial, and a creative sandbox mode.
+
+<ProjectGallery slug="wavelength" />
 
 ---
 
 ## Technical Highlights
 
-- **Custom Game Engine** — Purpose-built TypeScript engine handling rendering, input, state management, and the game loop
-- **Waveform Graphing** — Real-time rendering and visualization of audio waveforms using the Canvas API
-- **Signal Processing System** — Transformation nodes that manipulate waveform data through mathematical operations
-- **Node-Based Editor** — Visual gameboard where players connect processing nodes to build signal chains
-- **Custom Chip System** — Players can abstract their node logic chains into reusable chips, with recursive calling support
-- **Animation System** — Consistent move and zoom animations that visually communicate abstraction depth when entering or exiting custom chips
+- **Instant evaluation.** Every edit re-runs all 256 cycles of the signal right away, so there's no run button. The chip graph is sorted topologically and evaluated in order, and a warm-up pass lets Memory chips wrap around so cycle 0 can read cycle 255.
+- **Recursive chips.** A solved board compiles into a single function plus metadata that can rebuild it, so the puzzle becomes a reusable chip. Re-saving a chip updates every copy of it on every board.
+- **A\* wire routing.** Wires route themselves across a 66×36 grid using an 8-direction A\* search with a turn penalty that favors clean, straight runs and 45° bends.
+- **Three-pass wire rendering.** Each wire is drawn as a neutral base, a glow that grows as the signal nears full strength, and a polarity color, with pulses animating along the wires in order of graph depth.
+- **Zoom transitions.** Entering a level zooms the camera into its chip on a "motherboard" level select, with eased camera motion and a spring-eased reveal.
+- **Built to last.** Full keyboard play with focus management, undo/redo, versioned save migrations, design tokens, and 1,300+ passing tests across 81 test files.
 
 ---
 
 ## AI-Assisted Development
 
-WaveLength was built entirely using Claude Code as an AI development partner. The approach focused on effective context management — breaking down large problems and providing the AI agent with the right context at the right time.
+WaveLength was built with Claude Code as a development partner. The approach focused on context management: planning the work as epics and stories, breaking large problems down, and giving the agent the right context at the right time.
 
 The key insight from this project: AI-generated code quality is a developer problem, not an AI problem. With careful context management, clear specifications, and deliberate architecture decisions, AI-assisted development can produce creative, stable, and unique software quickly.
-
-The result is 6 working puzzles demonstrating all core systems — a technical demo that functions as a proof of concept for a full game with narrative progression and graduated difficulty.
 
 ---
 

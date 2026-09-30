@@ -18,14 +18,22 @@ export const skills: Skill[] = [
   { name: "Framer Motion", category: "frameworks", proficiency: "intermediate", years: null },
   { name: "Jest", category: "frameworks", proficiency: "advanced", years: null },
   { name: "Express", category: "frameworks", proficiency: "intermediate", years: null },
+  { name: "Zustand", category: "frameworks", proficiency: "advanced", years: null },
+  { name: "Electron", category: "frameworks", proficiency: "intermediate", years: null },
+  { name: "Canvas API", category: "frameworks", proficiency: "advanced", years: null },
+  { name: "Vitest", category: "frameworks", proficiency: "intermediate", years: null },
+  { name: "Playwright", category: "frameworks", proficiency: "intermediate", years: null },
 
   // Tools
   { name: "Git / GitHub", category: "tools", proficiency: "advanced", years: 7 },
   { name: "GitHub Actions", category: "tools", proficiency: "advanced", years: null },
   { name: "Figma", category: "tools", proficiency: "intermediate", years: null },
+  { name: "Claude Code", category: "tools", proficiency: "expert", years: null },
 
   // Platforms
   { name: "AWS (S3, Lambda)", category: "platforms", proficiency: "intermediate", years: null },
   { name: "MongoDB", category: "platforms", proficiency: "intermediate", years: null },
+  { name: "PostgreSQL / Supabase", category: "platforms", proficiency: "intermediate", years: null },
+  { name: "SQLite", category: "platforms", proficiency: "intermediate", years: null },
   { name: "Vercel", category: "platforms", proficiency: "intermediate", years: null },
 ];

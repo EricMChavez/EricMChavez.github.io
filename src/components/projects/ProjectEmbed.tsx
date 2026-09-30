@@ -14,7 +14,7 @@ export function ProjectEmbed({ src, title }: ProjectEmbedProps) {
   return (
     <div className="my-8">
       <div className="relative overflow-hidden rounded-xl border border-border bg-surface">
-        <div className="relative" style={{ paddingBottom: "56.25%" }}>
+        <div className="relative aspect-video">
           {!loaded && (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-accent" />

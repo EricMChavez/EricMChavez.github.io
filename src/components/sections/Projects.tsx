@@ -15,7 +15,11 @@ export function Projects() {
         </ScrollReveal>
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
-            <ScrollReveal key={project.slug} delay={index * 0.1}>
+            <ScrollReveal
+              key={project.slug}
+              delay={index * 0.1}
+              className={project.featured ? "md:col-span-2" : undefined}
+            >
               <ProjectCard project={project} />
             </ScrollReveal>
           ))}

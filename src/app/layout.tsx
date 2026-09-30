@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ericmchavez.dev"),
+  metadataBase: new URL("https://ericmchavez.github.io"),
   title: {
     default: "Eric Chavez | Software Engineer",
     template: "%s | Eric Chavez",
@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -64,6 +65,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <ThemeProvider>
           <Navbar />
           {children}

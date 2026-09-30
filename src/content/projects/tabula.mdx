@@ -1,0 +1,46 @@
+# Tabula
+
+A desktop app for building repeatable CSV workflows without writing code: typed rule blocks on a visual canvas, a row-by-row explanation of every change, and a replayable audit of every export.
+
+<div className="flex flex-wrap gap-2 my-4">
+  <Badge>Electron</Badge>
+  <Badge>React</Badge>
+  <Badge>TypeScript</Badge>
+  <Badge>SQLite</Badge>
+  <Badge>Zustand</Badge>
+  <Badge>Mantine</Badge>
+  <Badge>dnd-kit</Badge>
+  <Badge>Vitest</Badge>
+  <Badge>Playwright</Badge>
+</div>
+
+*Private client work. Tabula shipped to a client as a Windows installer and is in beta. The source is private, and every screenshot here uses the app's generic sample data (a fictional hardware store).*
+
+---
+
+## Overview
+
+Plenty of businesses run on spreadsheets that someone updates by hand: re-pricing inventory, dropping rows that shouldn't ship, flagging anything that looks wrong. Tabula turns that routine into a workflow you can rerun.
+
+You open a primary CSV and link reference files joined on a key column. Then you build three kinds of rules: **Exclude** rules drop rows, **Modify** rules rewrite values, and **Alerts** flag rows without changing them. Every cell shows how its value changed, and the Inspector traces exactly which rules touched a row and why. When you finalize, Tabula writes the output CSV and saves an audit you can reopen later, read-only.
+
+I built it solo between April and July 2026: 236 commits across 23 planned phases.
+
+<ProjectGallery slug="tabula" />
+
+---
+
+## Technical Highlights
+
+- **A typed rule language with a visual editor.** Rules are trees of typed blocks: WHEN and SET, And/Or/Not, comparisons, arithmetic, rounding, and aggregators. Slots are colored by type, so blocks only fit where they make sense. Blocks that aren't connected stay on the canvas, dimmed and inactive, like code outside `main()`. Older rule formats migrate forward automatically.
+- **Evaluation that tolerates messy data.** A missing link, a type mismatch, or a divide by zero is a typed failure, not a crash. Boolean logic is three-valued, a failure that reaches a rule's condition or output becomes a typed automatic exclusion, and an engine error rolls that row back while the run continues. Every rule leaves a per-row trace for the Inspector.
+- **Replayable audits.** Finalizing stores a compressed snapshot of the inputs and the workflow, plus the engine version and a SHA-256 hash of the export. Past results are rebuilt by re-running the engine, and tests verify that replays reproduce the original output exactly.
+- **One file per document.** Each `.tabula` document is a self-contained SQLite database with the CSVs embedded as compressed blobs, a versioned schema that migrates in place, and crash recovery for unsaved work.
+- **Configurable editions without forking.** The same engine can ship a domain-specific profile of default settings, column-name aliases, and preset rules, without changing the core or the branding.
+- **Tested end to end.** About 810 unit tests, plus about 60 Playwright scenarios that drive the real Electron app through test-only hooks. The same harness regenerates the in-app Help screenshots. electron-builder produces a Windows installer and macOS builds for Intel and Apple Silicon.
+
+---
+
+## Process
+
+Tabula started as a single-purpose tool and was redesigned partway through into a general rule engine. That kind of pivot only works with a clear record of what was decided and why. I kept a scope document, a data model, and a numbered decision log with more than 60 entries, which code comments cite directly, and designed major changes in Figma and planning documents before building them. I used Claude Code throughout, with those documents as the shared context.

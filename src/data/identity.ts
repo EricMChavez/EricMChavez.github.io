@@ -4,7 +4,7 @@ export const identity = {
   tagline:
     "Frontend expertise. Full-stack mindset. Building software where the pieces work together.",
   email: "emchavez320@gmail.com",
-  location: "Seattle, WA",
+  location: "Kent, WA (Seattle area)",
   linkedin: "https://www.linkedin.com/in/emchavez320",
   github: "https://github.com/EricMChavez",
 } as const;

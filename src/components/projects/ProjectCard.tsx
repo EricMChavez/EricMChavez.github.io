@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -13,14 +14,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card
       className={cn(
+        "h-full",
         project.featured && "border-accent/20",
         project.comingSoon && "opacity-70"
       )}
     >
-      <div className="flex flex-col gap-4">
-        {project.featured && (
+      <div className="flex h-full flex-col gap-4">
+        {project.preview && (
+          <div className="relative -mx-2 -mt-2 aspect-video overflow-hidden rounded-lg border border-border bg-background">
+            <Image
+              src={project.preview.src}
+              alt={project.preview.alt}
+              fill
+              sizes="(min-width: 768px) 480px, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
+        )}
+        {(project.featured || project.label) && (
           <span className="text-xs font-medium tracking-wide text-accent uppercase">
-            Featured Project
+            {project.featured ? "Featured Project" : project.label}
           </span>
         )}
         <h3 className="text-xl font-semibold text-text-primary">
@@ -35,7 +48,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
         {!project.comingSoon && (
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="mt-auto flex flex-wrap gap-3 pt-2">
             {project.url && (
               <Button
                 variant="primary"

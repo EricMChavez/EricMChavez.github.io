@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
-
-const slugs = ["wavelength", "chronicle"] as const;
+import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
-  return slugs.map((slug) => ({ slug }));
+  return projects
+    .filter((project) => !project.comingSoon)
+    .map((project) => ({ slug: project.slug }));
 }
 
 export const dynamicParams = false;

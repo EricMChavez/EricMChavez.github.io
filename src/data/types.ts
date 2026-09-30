@@ -9,16 +9,28 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+}
+
 export interface Project {
   name: string;
   slug: string;
   description: string;
   url: string | null;
   repo: string | null;
+  /** Short context label shown on the card, e.g. "Private client work" */
+  label: string | null;
   technologies: string[];
   highlights: string[];
   featured: boolean;
   comingSoon: boolean;
+  preview: ProjectImage | null;
+  gallery: ProjectImage[];
 }
 
 export interface Skill {
@@ -47,7 +59,7 @@ export interface Education {
 export interface Interest {
   name: string;
   description: string;
-  icon: string;
+  icon: "printer" | "cooking" | "hiking" | "music" | "game";
 }
 
 export interface NavLink {

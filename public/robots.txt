@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ericmchavez.dev/sitemap.xml
+Sitemap: https://ericmchavez.github.io/sitemap.xml
