@@ -1,54 +1,53 @@
-import { Quote } from "lucide-react";
 import { identity } from "@/data/identity";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" data-section="testimonials" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="testimonials" data-section="testimonials" className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Testimonials"
-            subtitle="From colleagues' recommendations on LinkedIn."
+            eyebrow="Testimonials"
+            title="What colleagues say"
+            subtitle="From recommendations on LinkedIn."
           />
         </ScrollReveal>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
           {testimonials.map((t, index) => (
-            <ScrollReveal key={t.name} delay={index * 0.1}>
-              <Card>
-                <Quote className="mb-3 h-6 w-6 text-accent/40" />
-                <blockquote className="text-sm text-text-secondary leading-relaxed">
-                  &ldquo;{t.quote}&rdquo;
+            <ScrollReveal key={t.name} delay={(index % 2) * 0.08}>
+              <figure className="flex h-full flex-col border-t border-border pt-6">
+                <span className="font-display text-5xl leading-none text-accent" aria-hidden="true">
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 font-display text-lg leading-relaxed text-text-primary">
+                  {t.quote}
                 </blockquote>
-                <div className="mt-4 border-t border-border pt-4">
-                  <p className="text-sm font-medium text-text-primary">
-                    <a
-                      href={t.profile}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-accent hover:underline"
-                    >
-                      {t.name}
-                    </a>
-                  </p>
-                  <p className="text-xs text-text-secondary">
+                <figcaption className="mt-6">
+                  <a
+                    href={t.profile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-draw text-sm font-medium text-text-primary"
+                  >
+                    {t.name}
+                  </a>
+                  <p className="label-mono mt-1">
                     {t.title}, {t.company}
                   </p>
-                </div>
-              </Card>
+                </figcaption>
+              </figure>
             </ScrollReveal>
           ))}
         </div>
         <ScrollReveal>
-          <p className="mt-8 text-center text-sm">
+          <p className="mt-12 text-sm">
             <a
               href={identity.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline"
+              className="link-draw text-accent"
             >
               Read the full recommendations on LinkedIn
             </a>

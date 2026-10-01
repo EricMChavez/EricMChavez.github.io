@@ -1,5 +1,3 @@
-# Tabula
-
 A desktop app for building repeatable CSV workflows without writing code: typed rule blocks on a visual canvas, a row-by-row explanation of every change, and a replayable audit of every export.
 
 <div className="flex flex-wrap gap-2 my-4">
@@ -26,11 +24,25 @@ You open a primary CSV and link reference files joined on a key column. Then you
 
 I built it solo between April and July 2026: 236 commits across 23 planned phases.
 
+<Pipeline
+  steps={["Primary + linked CSVs", "Exclude · Modify · Alert rules", "Inspector trace", "Export + audit"]}
+  caption="Data flows through typed rules; every change is traced per row and every export is saved as a replayable audit."
+/>
+
 <ProjectGallery slug="tabula" />
 
 ---
 
 ## Technical Highlights
+
+<Stats
+  items={[
+    { value: "~810", label: "Unit tests" },
+    { value: "~60", label: "Playwright scenarios" },
+    { value: "236", label: "Commits" },
+    { value: "60+", label: "Logged decisions" },
+  ]}
+/>
 
 - **A typed rule language with a visual editor.** Rules are trees of typed blocks: WHEN and SET, And/Or/Not, comparisons, arithmetic, rounding, and aggregators. Slots are colored by type, so blocks only fit where they make sense. Blocks that aren't connected stay on the canvas, dimmed and inactive, like code outside `main()`. Older rule formats migrate forward automatically.
 - **Evaluation that tolerates messy data.** A missing link, a type mismatch, or a divide by zero is a typed failure, not a crash. Boolean logic is three-valued, a failure that reaches a rule's condition or output becomes a typed automatic exclusion, and an engine error rolls that row back while the run continues. Every rule leaves a per-row trace for the Inspector.

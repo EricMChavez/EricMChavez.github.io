@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import { GalleryImage } from "./GalleryImage";
 
 interface ProjectGalleryProps {
   slug: string;
@@ -22,16 +22,9 @@ export function ProjectGallery({ slug }: ProjectGalleryProps) {
             !isPortrait(image.width, image.height) && "col-span-2 sm:col-span-3"
           )}
         >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            sizes="(min-width: 768px) 768px, 100vw"
-            className="h-auto w-full rounded-lg border border-border"
-          />
+          <GalleryImage image={image} sizes="(min-width: 768px) 768px, 100vw" />
           {image.caption && (
-            <figcaption className="text-center text-sm text-text-secondary">
+            <figcaption className="label-mono">
               {image.caption}
             </figcaption>
           )}

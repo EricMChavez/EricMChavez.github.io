@@ -1,5 +1,3 @@
-# The House Menu
-
 A phone-first meal-planning app I built for my household. Every meal lands on a calendar as a diner guest check, and the app keeps track of what's in the pantry, what each meal costs, and what goes on one shared grocery list.
 
 <div className="flex flex-wrap gap-2 my-4">
@@ -30,11 +28,25 @@ The interface is styled as paper guest checks on a dark diner counter, with its 
 
 ## Technical Highlights
 
+<Stats
+  items={[
+    { value: "133", label: "Tested migrations" },
+    { value: "742", label: "Commits" },
+    { value: "~6 wks", label: "To build" },
+    { value: "~60", label: "Plan documents" },
+  ]}
+/>
+
 - **Ledger logic lives in Postgres.** Anything that moves quantities, money, or lock state goes through database functions (RPCs), not client code. Stock is split into *available* and *reserved*, and *incoming* stock is derived on the fly from grocery lines that are committed but not yet received. New meals plan against available plus incoming, which prevents double-buying.
 - **Every migration is tested, then sabotaged.** A test runner loads the full stack of 133 migrations into a throwaway `postgres:16` Docker container and runs each migration's SQL test file. A second "sabotage" pass then deliberately breaks each database object and checks that the expected test blocks fail, and only those. A test that can't catch a real bug counts as a failure.
 - **A secret-free demo mode.** A build-time alias swaps the Supabase client for an in-memory fake that mirrors the query builder, the RPCs, the derived views, and the triggers. The real client is never bundled, so the demo can't leak credentials, and a check script confirms that locking and unlocking a meal leaves every item's stock unchanged.
 - **A narrow write API for an AI assistant.** I plan meals by chatting with Claude on my phone, and it writes to the app through one serverless function that allows a short list of actions. The assistant can propose changes, but every quantity goes through the same database functions as the UI, and malformed requests are refused with an explanation of what was expected.
 - **Passkey sign-in.** Family members enrol through a one-time link that becomes a single-use token, then register a passkey on their own device. The server-side secret lives only in the hosting environment.
+
+<Pipeline
+  steps={["Claude chat", "Narrow write API", "Postgres functions", "Pantry ledger"]}
+  caption="The AI assistant's write path: a short list of allowed actions, then the same database functions the UI uses."
+/>
 
 ---
 
@@ -42,4 +54,6 @@ The interface is styled as paper guest checks on a dark diner counter, with its 
 
 The House Menu came together in about six weeks (742 commits) with Claude Code. What kept it coherent is written process: a `CLAUDE.md` rulebook that states the data model and the principle "deterministic code in the write path", about 60 plan documents that are written before work starts and kept after it closes, and scoped rule files that load only when their part of the codebase is touched.
 
-The database tests exist for the same reason. When an AI writes a lot of the code, the safety net has to be something that fails loudly on its own.
+The database tests exist for the same reason.
+
+<Callout>When an AI writes a lot of the code, the safety net has to be something that fails loudly on its own.</Callout>

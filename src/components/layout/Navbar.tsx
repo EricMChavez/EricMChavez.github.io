@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/data/navigation";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -25,7 +27,7 @@ export function Navbar() {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
       >
         Skip to content
       </a>
@@ -34,34 +36,40 @@ export function Navbar() {
           "fixed top-0 right-0 left-0 z-40 transition-all duration-300",
           scrolled
             ? "border-b border-border bg-background/80 backdrop-blur-lg"
-            : "bg-transparent"
+            : "border-b border-transparent bg-transparent"
         )}
       >
-        <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <a
-            href="#hero"
-            className="text-lg font-semibold text-text-primary transition-colors hover:text-accent"
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <Link
+            href="/#hero"
+            className="font-display text-xl font-semibold text-text-primary transition-colors hover:text-accent"
+            aria-label="Eric Chavez, back to top"
           >
             EC
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.sectionId}
                 href={link.href}
                 className={cn(
-                  "relative rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "relative rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   activeSection === link.sectionId
-                    ? "text-accent"
+                    ? "text-text-primary"
                     : "text-text-secondary hover:text-text-primary"
                 )}
+                aria-current={activeSection === link.sectionId ? "location" : undefined}
               >
                 {link.label}
                 {activeSection === link.sectionId && (
-                  <span className="absolute bottom-0 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-accent" />
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-3 bottom-0.5 h-0.5 rounded-full bg-accent"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
                 )}
-              </a>
+              </Link>
             ))}
             <ThemeToggle />
           </div>

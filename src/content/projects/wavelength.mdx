@@ -1,5 +1,3 @@
-# WaveLength
-
 A browser puzzle game about signal processing, running on a Canvas 2D engine I wrote from scratch in TypeScript.
 
 <div className="flex flex-wrap gap-2 my-4">
@@ -10,10 +8,6 @@ A browser puzzle game about signal processing, running on a Canvas 2D engine I w
   <Badge>Vite</Badge>
   <Badge>Vitest</Badge>
   <Badge>Claude Code</Badge>
-</div>
-
-<div className="flex gap-4 my-4">
-  [View Live](https://ericmchavez.github.io/WaveLength) · [GitHub](https://github.com/EricMChavez/WaveLength)
 </div>
 
 ---
@@ -33,6 +27,11 @@ Each puzzle gives you three input waveforms and three target outputs. You place 
 
 The idea comes from signal chains in digital audio workstations. The concepts I used to route and process audio tracks became the game's core mechanic.
 
+<Pipeline
+  steps={["Input A", "Divide", "Add", "Output X"]}
+  caption="A signal chain on the board: chips transform an input wave until the output matches its target."
+/>
+
 WaveLength shipped in February 2026 as a public beta with six puzzles, a tutorial, and a creative sandbox mode.
 
 <ProjectGallery slug="wavelength" />
@@ -40,6 +39,15 @@ WaveLength shipped in February 2026 as a public beta with six puzzles, a tutoria
 ---
 
 ## Technical Highlights
+
+<Stats
+  items={[
+    { value: "256", label: "Cycles per edit" },
+    { value: "66×36", label: "Routing grid" },
+    { value: "1,300+", label: "Passing tests" },
+    { value: "6", label: "Puzzles at launch" },
+  ]}
+/>
 
 - **Instant evaluation.** Every edit re-runs all 256 cycles of the signal right away, so there's no run button. The chip graph is sorted topologically and evaluated in order, and a warm-up pass lets Memory chips wrap around so cycle 0 can read cycle 255.
 - **Recursive chips.** A solved board compiles into a single function plus metadata that can rebuild it, so the puzzle becomes a reusable chip. Re-saving a chip updates every copy of it on every board.
@@ -54,7 +62,9 @@ WaveLength shipped in February 2026 as a public beta with six puzzles, a tutoria
 
 WaveLength was built with Claude Code as a development partner. The approach focused on context management: planning the work as epics and stories, breaking large problems down, and giving the agent the right context at the right time.
 
-The key insight from this project: AI-generated code quality is a developer problem, not an AI problem. With careful context management, clear specifications, and deliberate architecture decisions, AI-assisted development can produce creative, stable, and unique software quickly.
+<Callout>AI-generated code quality is a developer problem, not an AI problem.</Callout>
+
+With careful context management, clear specifications, and deliberate architecture decisions, AI-assisted development can produce creative, stable, and unique software quickly.
 
 ---
 

@@ -22,6 +22,8 @@ export const projects: Project[] = [
       "Full keyboard play, undo/redo, versioned save migrations, and 1,300+ passing tests",
       "LinkedIn showcase post gained 178 likes and 29 comments",
     ],
+    outcome: "Public beta with 6 puzzles and 1,300+ passing tests",
+    accent: "phosphor",
     featured: true,
     comingSoon: false,
     preview: {
@@ -78,6 +80,8 @@ export const projects: Project[] = [
       "Single-file SQLite documents with embedded compressed CSVs and versioned migrations",
       "~810 unit tests and ~60 Playwright scenarios driving the real Electron app",
     ],
+    outcome: "Shipped to a client as a Windows installer, built solo in four months",
+    accent: "blueprint",
     featured: false,
     comingSoon: false,
     preview: {
@@ -140,6 +144,8 @@ export const projects: Project[] = [
       "Secret-free demo mode backed by an in-memory Supabase fake",
       "A narrow, code-enforced write API that lets an AI assistant propose changes safely",
     ],
+    outcome: "In daily use at home, backed by 133 tested database migrations",
+    accent: "stamp",
     featured: false,
     comingSoon: false,
     preview: {

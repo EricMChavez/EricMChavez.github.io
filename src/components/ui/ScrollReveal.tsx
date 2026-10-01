@@ -8,7 +8,7 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
-const hidden = { opacity: 0, y: 24 };
+const hidden = { opacity: 0, y: 16 };
 const shown = { opacity: 1, y: 0 };
 
 export function ScrollReveal({ children, className, delay = 0 }: ScrollRevealProps) {
@@ -27,7 +27,7 @@ export function ScrollReveal({ children, className, delay = 0 }: ScrollRevealPro
       transition={
         prefersReducedMotion
           ? { duration: 0 }
-          : { duration: 0.5, delay, ease: "easeOut" }
+          : { duration: 0.6, delay, ease: [0.2, 0.8, 0.2, 1] }
       }
       className={className}
     >

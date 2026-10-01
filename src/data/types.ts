@@ -19,6 +19,8 @@ export interface ProjectImage {
   caption?: string;
 }
 
+export type ProjectAccent = "phosphor" | "stamp" | "blueprint";
+
 export interface Project {
   name: string;
   slug: string;
@@ -29,6 +31,10 @@ export interface Project {
   label: string | null;
   technologies: string[];
   highlights: string[];
+  /** One-line result shown on the home page row */
+  outcome: string;
+  /** Case-study colour, taken from the project's own look */
+  accent: ProjectAccent;
   featured: boolean;
   comingSoon: boolean;
   preview: ProjectImage | null;

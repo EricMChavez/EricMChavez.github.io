@@ -7,26 +7,63 @@
   /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 
-  /* Light mode colors (defaults) */
-  --color-background: #fafafa;
-  --color-surface: #ffffff;
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #4a4a68;
-  --color-accent: #6366f1;
-  --color-accent-hover: #4f46e5;
-  --color-border: #e5e7eb;
+  /* Fluid display sizes (Utopia-style clamps, 360px → 1280px) */
+  --text-display: clamp(3rem, 2.1rem + 4vw, 5.75rem);
+  --text-display--line-height: 0.95;
+  --text-title: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+  --text-title--line-height: 1.05;
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.3;
+
+  /* Phosphor palette, light (defaults). Contrast checked to WCAG AA. */
+  --color-background: #f3f6f2;
+  --color-surface: #fbfdfa;
+  --color-text-primary: #0f1a13;
+  --color-text-secondary: #47574c;
+  --color-accent: #11703a;
+  --color-accent-hover: #0c5a2e;
+  --color-on-accent: #ffffff;
+  --color-signal: #a35a00;
+  --color-border: #d6e0d7;
+  --color-grid: #e3ebe4;
 }
 
-/* Dark mode overrides */
+/* Phosphor palette, dark: a scope screen */
 .dark {
-  --color-background: #0f0f1a;
-  --color-surface: #1a1a2e;
-  --color-text-primary: #f0f0f5;
-  --color-text-secondary: #a0a0b8;
-  --color-accent: #818cf8;
-  --color-accent-hover: #6366f1;
-  --color-border: #2a2a40;
+  --color-background: #080d0a;
+  --color-surface: #0e1611;
+  --color-text-primary: #e2f1e6;
+  --color-text-secondary: #94ab9b;
+  --color-accent: #3ddc84;
+  --color-accent-hover: #6ee7a4;
+  --color-on-accent: #03200f;
+  --color-signal: #f5b942;
+  --color-border: #1c2b21;
+  --color-grid: #14211a;
+}
+
+/* Per-project accents for case studies, taken from each project's own look */
+[data-accent="stamp"] {
+  --color-accent: #c1121f;
+  --color-accent-hover: #9b0e19;
+  --color-on-accent: #ffffff;
+}
+.dark [data-accent="stamp"] {
+  --color-accent: #ff5c62;
+  --color-accent-hover: #ff8589;
+  --color-on-accent: #1c0405;
+}
+[data-accent="blueprint"] {
+  --color-accent: #1f4fd1;
+  --color-accent-hover: #183fa8;
+  --color-on-accent: #ffffff;
+}
+.dark [data-accent="blueprint"] {
+  --color-accent: #8db0ff;
+  --color-accent-hover: #b3caff;
+  --color-on-accent: #050f2a;
 }
 
 @layer base {
@@ -34,12 +71,62 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-background text-text-primary antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-on-accent;
   }
 
   /* Visible focus indicators for keyboard nav */
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  /* Mono "patch label" used for eyebrows, dates and metadata */
+  .label-mono {
+    @apply font-mono text-label font-medium tracking-[0.1em] text-text-secondary uppercase;
+  }
+
+  /* Underline that draws in from the left on hover */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    padding-bottom: 1px;
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .link-draw {
+      transition: background-size 0.3s ease;
+    }
+  }
+}
+
+/* Page-to-page morph of project images (View Transitions API) */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(*) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }

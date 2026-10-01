@@ -1,28 +1,27 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { projects } from "@/data/projects";
 
 export function Projects() {
   return (
     <section id="projects" data-section="projects" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Projects"
-            subtitle="Things I've built to learn, create, and ship."
+            eyebrow="Selected work"
+            title="Things I've built and shipped"
+            subtitle="A game, a client product and an app my family uses every day."
           />
         </ScrollReveal>
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <ScrollReveal
-              key={project.slug}
-              delay={index * 0.1}
-              className={project.featured ? "md:col-span-2" : undefined}
-            >
-              <ProjectCard project={project} />
-            </ScrollReveal>
-          ))}
+        <div className="grid gap-20 md:gap-28">
+          {projects
+            .filter((project) => !project.comingSoon)
+            .map((project, index) => (
+              <ScrollReveal key={project.slug}>
+                <ProjectShowcase project={project} flip={index % 2 === 1} />
+              </ScrollReveal>
+            ))}
         </div>
       </div>
     </section>

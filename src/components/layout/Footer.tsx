@@ -4,7 +4,7 @@ import { identity } from "@/data/identity";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
         <p className="text-sm text-text-secondary">
           &copy; {new Date().getFullYear()} {identity.name}. All rights reserved.
         </p>

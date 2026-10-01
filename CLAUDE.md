@@ -19,6 +19,8 @@ Deployed to GitHub Pages (https://ericmchavez.github.io) by `.github/workflows/d
 - **Static export** — `output: 'export'` in `next.config.ts`. No API routes, no server-side rendering.
 - **Content** — Profile data in `src/data/*.ts` (typed objects). Project case studies in `src/content/projects/*.mdx`.
 - **Styling** — Tailwind utility classes. CSS custom properties in `globals.css` for color palette theming. No inline styles.
+- **Visual identity** — "Phosphor" palette (scope-green accent, amber `signal` colour) defined as tokens in `globals.css`, all pairs WCAG AA in both themes. Fraunces (`font-display`) for headings, Inter for body, JetBrains Mono via the `.label-mono` class for labels and metadata. Case studies switch accent through `data-accent` (`phosphor`, `stamp`, `blueprint`), set per project in `src/data/projects.ts`.
+- **Case-study MDX components** — `Stats`, `Pipeline`, `Callout`, `ProjectGallery` (click-to-zoom), `ProjectEmbed`. Only use facts already in the case study; never invent numbers.
 - **Animation** — Framer Motion only. Always wrap in `prefers-reduced-motion` check. Use the `ScrollReveal` component for scroll-triggered entrances.
 
 ## Conventions

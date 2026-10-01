@@ -1,66 +1,64 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { experience } from "@/data/experience";
 
 export function Experience() {
   return (
-    <section id="experience" data-section="experience" className="bg-surface py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="experience" data-section="experience" className="border-y border-border bg-surface py-24">
+      <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <SectionHeading
-            title="Experience"
-            subtitle="Where I've built things that matter."
+            eyebrow="Experience"
+            title="Where I've built things that matter"
           />
         </ScrollReveal>
-        <div className="space-y-8">
-          {experience.map((job, index) => (
-            <ScrollReveal key={job.company} delay={index * 0.1}>
-              <Card>
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-text-primary">
-                      {job.title}
-                    </h3>
-                    <p className="text-accent">{job.company}</p>
-                  </div>
-                  <p className="text-sm text-text-secondary whitespace-nowrap">
-                    {job.start} – {job.end} · {job.location}
+        <ol className="grid gap-14">
+          {experience.map((job) => (
+            <li key={job.company}>
+              <ScrollReveal className="grid gap-4 md:grid-cols-12 md:gap-12">
+                <div className="md:col-span-3">
+                  <p className="label-mono text-text-primary">
+                    {job.start} – {job.end}
                   </p>
+                  <p className="label-mono mt-1">{job.location}</p>
                 </div>
-                <p className="mt-3 text-sm text-text-secondary">{job.summary}</p>
-                <ul className="mt-4 space-y-2">
-                  {job.accomplishments.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 text-sm text-text-secondary"
+                <div className="relative border-l border-border pl-6 md:col-span-9">
+                  <span
+                    className="absolute top-2 -left-[4.5px] h-2 w-2 rounded-full bg-accent ring-4 ring-surface"
+                    aria-hidden="true"
+                  />
+                  <h3 className="font-display text-2xl font-semibold tracking-tight text-text-primary">
+                    {job.title}
+                  </h3>
+                  <p className="mt-1 font-medium text-accent">{job.company}</p>
+                  <p className="mt-4 max-w-2xl leading-relaxed text-text-secondary">{job.summary}</p>
+                  <ul className="mt-5 grid max-w-2xl gap-2.5">
+                    {job.accomplishments.map((item, i) => (
+                      <li key={i} className="flex gap-3 text-sm leading-relaxed text-text-secondary">
+                        <span className="mt-2 h-px w-3 shrink-0 bg-signal" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 font-mono text-xs text-text-secondary">
+                    {job.technologies.join(" · ")}
+                  </p>
+                  {job.caseStudy && (
+                    <Link
+                      href={job.caseStudy}
+                      className="link-draw mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent"
                     >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {job.technologies.map((tech) => (
-                    <Badge key={tech}>{tech}</Badge>
-                  ))}
+                      Read the case study
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
-                {job.caseStudy && (
-                  <Link
-                    href={job.caseStudy}
-                    className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-                  >
-                    Read the case study
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                )}
-              </Card>
-            </ScrollReveal>
+              </ScrollReveal>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );
