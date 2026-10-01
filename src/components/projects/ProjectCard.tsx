@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, Github } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -58,6 +58,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
               >
                 <ExternalLink className="h-4 w-4" />
                 View Live
+              </Button>
+            )}
+            {project.repo && (
+              <Button
+                variant="secondary"
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4" />
+                Source
               </Button>
             )}
             <Button variant="secondary" href={`/projects/${project.slug}`}>

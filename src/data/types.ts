@@ -7,6 +7,8 @@ export interface Experience {
   summary: string;
   accomplishments: string[];
   technologies: string[];
+  /** Internal path to a related case study, e.g. "/projects/tabula" */
+  caseStudy?: string;
 }
 
 export interface ProjectImage {
@@ -36,14 +38,16 @@ export interface Project {
 export interface Skill {
   name: string;
   category: "languages" | "frameworks" | "tools" | "platforms";
+  /** Sort key only (strongest first); never displayed */
   proficiency: "beginner" | "intermediate" | "advanced" | "expert";
-  years: number | null;
 }
 
 export interface Testimonial {
   name: string;
   title: string;
   company: string;
+  /** Recommender's LinkedIn profile */
+  profile: string;
   quote: string;
 }
 

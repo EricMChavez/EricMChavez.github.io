@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eric Chavez | Software Engineer",
     description:
-      "Frontend expertise. Full-stack mindset. Building software where the pieces work together.",
+      "Frontend engineer. Four years building Expedia Group's design system, now shipping full-stack apps end to end.",
     type: "website",
     locale: "en_US",
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Eric Chavez | Software Engineer",
     description:
-      "Frontend expertise. Full-stack mindset. Building software where the pieces work together.",
+      "Frontend engineer. Four years building Expedia Group's design system, now shipping full-stack apps end to end.",
     images: ["/og-image.png"],
   },
   icons: {

@@ -24,6 +24,9 @@ export function Hero() {
         <p className="mt-6 max-w-xl text-lg text-text-secondary">
           {identity.tagline}
         </p>
+        <p className="mt-3 text-sm text-text-secondary">
+          {identity.region} · {identity.availability}
+        </p>
       </ScrollReveal>
       <ScrollReveal delay={0.3}>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

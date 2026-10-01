@@ -1,7 +1,8 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SkillBar } from "@/components/ui/SkillBar";
+import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { skills } from "@/data/skills";
+import type { Skill } from "@/data/types";
 
 const categoryLabels: Record<string, string> = {
   languages: "Languages",
@@ -12,6 +13,13 @@ const categoryLabels: Record<string, string> = {
 
 const categoryOrder = ["languages", "frameworks", "tools", "platforms"] as const;
 
+const proficiencyRank: Record<Skill["proficiency"], number> = {
+  expert: 0,
+  advanced: 1,
+  intermediate: 2,
+  beginner: 3,
+};
+
 export function Skills() {
   return (
     <section id="skills" data-section="skills" className="bg-surface py-24">
@@ -21,9 +29,12 @@ export function Skills() {
         </ScrollReveal>
         <div className="grid gap-10 sm:grid-cols-2">
           {categoryOrder.map((category, catIndex) => {
-            const categorySkills = skills.filter(
-              (s) => s.category === category
-            );
+            const categorySkills = skills
+              .filter((s) => s.category === category)
+              .sort(
+                (a, b) =>
+                  proficiencyRank[a.proficiency] - proficiencyRank[b.proficiency]
+              );
             if (categorySkills.length === 0) return null;
 
             return (
@@ -32,19 +43,13 @@ export function Skills() {
                   <h3 className="mb-4 text-lg font-semibold text-text-primary">
                     {categoryLabels[category]}
                   </h3>
-                  <div className="space-y-3">
+                  <ul className="flex flex-wrap gap-2">
                     {categorySkills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex items-center justify-between"
-                      >
-                        <span className="text-sm text-text-secondary">
-                          {skill.name}
-                        </span>
-                        <SkillBar proficiency={skill.proficiency} />
-                      </div>
+                      <li key={skill.name}>
+                        <Badge>{skill.name}</Badge>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </ScrollReveal>
             );

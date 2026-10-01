@@ -12,14 +12,13 @@ export function About() {
         <div className="mx-auto max-w-3xl space-y-5 text-text-secondary leading-relaxed">
           <ScrollReveal delay={0.1}>
             <p>
-              Software engineer with frontend expertise and a full-stack mindset. I specialize
-              in building shared UI component libraries and design systems at scale, writing
+              I specialize in building shared UI component libraries and design systems at scale, writing
               clean TypeScript and shipping well-scoped work that teams can depend on.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <p>
-              My path to software started in music production — I studied audio engineering at
+              My path to software started in music production. I studied audio engineering at
               Full Sail University and spent years arranging tracks in a DAW. I discovered that
               what I loved about music was the same thing I love about software: the way
               interconnected systems create something greater than the sum of their parts.
@@ -29,7 +28,7 @@ export function About() {
           <ScrollReveal delay={0.2}>
             <p>
               After a coding bootcamp where I graduated top of my cohort, I spent nearly four
-              years building design system components at Expedia Group — collaborating
+              years building design system components at Expedia Group, collaborating
               cross-platform with designers and engineers across web, iOS, and Android. Now
               I&apos;m building with AI-assisted development tools and looking for the next
               team where I can make an impact.

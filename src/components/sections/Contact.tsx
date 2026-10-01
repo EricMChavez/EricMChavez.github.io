@@ -11,7 +11,7 @@ export function Contact() {
         <ScrollReveal>
           <SectionHeading
             title="Get in Touch"
-            subtitle="Let's build something together."
+            subtitle={`Let's build something together. ${identity.region} · ${identity.availability}.`}
           />
         </ScrollReveal>
         <ScrollReveal delay={0.1}>

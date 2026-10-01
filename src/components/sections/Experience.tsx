@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -46,6 +48,15 @@ export function Experience() {
                     <Badge key={tech}>{tech}</Badge>
                   ))}
                 </div>
+                {job.caseStudy && (
+                  <Link
+                    href={job.caseStudy}
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
+                  >
+                    Read the case study
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
               </Card>
             </ScrollReveal>
           ))}
