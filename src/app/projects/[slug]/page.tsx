@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CaseStudy } from "@/components/projects/CaseStudy";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -56,12 +57,18 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) notFound();
 
   try {
     const { default: Content } = await import(
       `@/content/projects/${slug}.mdx`
     );
-    return <Content />;
+    return (
+      <CaseStudy project={project}>
+        <Content />
+      </CaseStudy>
+    );
   } catch {
     notFound();
   }

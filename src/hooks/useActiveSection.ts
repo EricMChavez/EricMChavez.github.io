@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState<string>("");
+  // Tagged with the route it was observed on, so a stale value from the
+  // previous page is ignored without resetting state inside the effect.
+  const [active, setActive] = useState({ pathname: "", sectionId: "" });
+  const pathname = usePathname();
 
+  // The navbar lives in the root layout and never remounts, so re-query the
+  // sections on every route change instead of observing stale elements.
   useEffect(() => {
     const sections = document.querySelectorAll("[data-section]");
 
@@ -14,7 +20,7 @@ export function useActiveSection() {
           if (entry.isIntersecting) {
             const sectionId = entry.target.getAttribute("data-section");
             if (sectionId) {
-              setActiveSection(sectionId);
+              setActive({ pathname, sectionId });
             }
           }
         }
@@ -28,7 +34,7 @@ export function useActiveSection() {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
-  return activeSection;
+  return active.pathname === pathname ? active.sectionId : "";
 }

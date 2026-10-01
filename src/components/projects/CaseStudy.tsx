@@ -1,22 +1,19 @@
 import { ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { projects } from "@/data/projects";
+import type { Project } from "@/data/types";
 
-export default async function ProjectLayout({
-  children,
-  params,
-}: {
+interface CaseStudyProps {
+  project: Project;
   children: React.ReactNode;
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) notFound();
+}
 
+// Rendered by the page rather than a layout: Next.js scrolls to the first
+// element of the page segment on navigation, so the header must live there
+// or opening a case study lands mid-article.
+export function CaseStudy({ project, children }: CaseStudyProps) {
   return (
     <main id="main-content" data-accent={project.accent} className="pt-24 pb-24">
       <header className="mx-auto max-w-5xl px-6">
