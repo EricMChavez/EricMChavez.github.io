@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, scrollToSection } from "@/lib/utils";
 import { navLinks } from "@/data/navigation";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { ThemeToggle } from "./ThemeToggle";
@@ -42,6 +42,7 @@ export function Navbar() {
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link
             href="/#hero"
+            onClick={scrollToSection}
             className="font-display text-xl font-semibold text-text-primary transition-colors hover:text-accent"
             aria-label="Eric Chavez, back to top"
           >
@@ -53,6 +54,7 @@ export function Navbar() {
               <Link
                 key={link.sectionId}
                 href={link.href}
+                onClick={scrollToSection}
                 className={cn(
                   "relative rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   activeSection === link.sectionId
