@@ -10,7 +10,7 @@ export function Projects() {
         <ScrollReveal>
           <SectionHeading
             eyebrow="Selected work"
-            title="Things I've built and shipped"
+            title="Things I've built"
             subtitle="A game, a client product and an app my family uses every day."
           />
         </ScrollReveal>
