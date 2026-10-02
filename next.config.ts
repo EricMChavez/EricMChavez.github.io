@@ -7,11 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
-  experimental: {
-    // Morphs a project image into its case-study cover. Browsers without
-    // the View Transitions API simply navigate without the animation.
-    viewTransition: true,
-  },
 };
 
 const withMDX = createMDX({});

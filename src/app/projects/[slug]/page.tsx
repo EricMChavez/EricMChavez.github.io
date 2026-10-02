@@ -60,16 +60,13 @@ export default async function ProjectPage({
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  try {
-    const { default: Content } = await import(
-      `@/content/projects/${slug}.mdx`
-    );
-    return (
-      <CaseStudy project={project}>
-        <Content />
-      </CaseStudy>
-    );
-  } catch {
-    notFound();
-  }
+  const Content = await import(`@/content/projects/${slug}.mdx`)
+    .then((mod) => mod.default)
+    .catch(() => notFound());
+
+  return (
+    <CaseStudy project={project}>
+      <Content />
+    </CaseStudy>
+  );
 }
